@@ -1,0 +1,9 @@
+# track this file .gitignore (i.e. do NOT ignore it)
+!.gitignore
+
+# track readme.md in the root (i.e. do NOT ignore it)
+!readme.md
+
+*.DS_Store
+
+/wp-content/themes/keephome/node_modules

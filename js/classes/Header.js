@@ -1,5 +1,5 @@
 import Toolbar from './Toolbar.js'
-//import { toArray } from '../lib/utils.js'
+import { toArray } from '../lib/utils.js'
 
 
 class Header {
