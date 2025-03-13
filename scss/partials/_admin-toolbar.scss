@@ -1,0 +1,19 @@
+/** Some resets for the admin toolbar, as necesary **/
+body.logged-in.admin-bar {
+  .header {  
+    @include bp-992 {
+      top: 32px;
+    }
+  }
+}
+
+#wp-admin-bar-top-secondary {
+  .display-name {
+    color: #eee;
+  }
+  #wp-admin-bar-search {
+    @include bp-992 {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,132 @@
+.banner-signup {
+  margin-top: 100px;
+  position: relative;
+
+  .banner-signup__bg {
+    display: none;
+    max-width: 100%;
+    max-height: 100%;
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    &--mobile {
+      display: block;
+
+      @media (min-width: $bp-768) {
+        display: none;
+      }
+    }
+
+    &--tablet {
+
+      @media (min-width: $bp-768) {
+        display: block;
+      }
+
+      @media (min-width: $bp-1200) {
+        display: none;
+      }
+    }
+
+    &--desktop {
+      @media (min-width: $bp-1200) {
+        display: block;
+      }
+    }
+  }
+
+  .banner__inner {
+    position: relative;
+    width: 100%;
+    padding: 0 15px;
+    height: 100%;
+    @include clearfix;
+    min-height: 555px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media (min-width: $bp-768) {
+      justify-content: flex-end;
+    }
+
+    .banner__text {
+      z-index: 1;
+      padding-top: 45px;
+      position: relative;
+      margin: 0 auto;
+      width: 100%;
+      max-width: 340px;
+
+      @media (min-width: $bp-768) {
+        padding-top: 0;
+        margin: 0;
+        margin-right: 5%;
+        max-width: 420px;
+      }
+
+      @media (min-width: $bp-992) {
+        max-width: 600px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      @media (min-width: $bp-1200) {
+        max-width: 460px;
+      }
+
+      @media (min-width: $xl) {
+        max-width: 520px;
+        margin-right: 10%;
+      }
+
+      h3 {
+        @include set-text($taupe, 4.5rem, 5.5rem, 'serif-med');
+        margin-bottom: 1.5rem;
+
+        @media (min-width: $bp-992) {
+          font-size: 4.1rem;
+          line-height: 6.7rem;
+          margin-bottom: 2.0rem;
+        }
+      }
+
+      p {
+        font-size: 1.8rem;
+        line-height: 2.8rem;
+        max-width: 555px;
+        margin-bottom: 15px;
+
+        @media (min-width: $bp-992) {
+          margin-bottom: 35px;
+        }
+      }
+    }
+
+    .banner-signup__mobile-img {
+      width: 100%;
+      margin-top: 30px;
+      display: block;
+      right: -5%;
+      position: relative;
+
+      @media (min-width: $bp-768) {
+        display: none;
+      }
+    }
+
+    @media only screen and (max-width: 992px) {
+      align-items: center;
+      position: relative;
+      width: 100%;
+    }
+  }
+}

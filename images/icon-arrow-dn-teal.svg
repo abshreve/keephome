@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="18px" height="10px" viewBox="0 0 18 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 58 (84663) - https://sketch.com -->
+    <title>icon-arrow-dn-teal</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="4.99993297 4 4.26682224 4.6706079 -4 12.2166565 -2.53375619 14 5 7.12460649 12.5337562 14 14 12.2166565 5.73317776 4.6706079"></polygon>
+    </defs>
+    <g id="icon-arrow-dn-teal" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Arrow-/-Teal-Copy" transform="translate(9.000000, 5.000000) rotate(-270.000000) translate(-9.000000, -5.000000) translate(4.000000, -4.000000)">
+            <g id="Color-/-Primary-/-Dark-Indigo">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <use id="Mask" fill="#008099" transform="translate(5.000000, 9.000000) rotate(-270.000000) translate(-5.000000, -9.000000) " xlink:href="#path-1"></use>
+            </g>
+        </g>
+    </g>
+</svg>

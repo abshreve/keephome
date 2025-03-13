@@ -1,0 +1,68 @@
+.banner-cta {
+  .banner__inner_cta {
+    @include bp-992 {
+      min-height: 623px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .banner__text_cta {
+      padding: 14px 20px 27px;
+      text-align: center;
+      align-items: center;
+
+
+      @include bp-992 {
+        max-width: 600px;
+      }
+
+      h2 {
+        @include set-text($taupe, 4.5rem, 5.5rem, 'serif-med');
+        padding-top: 40px;
+
+        @include bp-992 {
+          font-size: 4.6rem;
+        }
+      }
+
+      figure.logo {
+        padding-left: 47%;
+      }
+
+      p {
+        line-height: 2.8rem;
+        text-align: center;
+        padding-bottom: 40px;
+        padding-top: 40px;
+      }
+    }
+  }
+
+  &__links {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+
+    @include bp-992 {
+        flex-direction: row;
+    }
+
+    .button {
+      margin-bottom: 15px;
+
+      @include bp-992 {
+        &:first-of-type {
+          margin-right: 20px;
+        }
+
+        &:last-of-type {
+          margin-left: 20px;
+        }
+      }
+    }
+  }
+}

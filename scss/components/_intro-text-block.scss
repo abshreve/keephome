@@ -1,0 +1,45 @@
+.intro-text-block {
+  padding: 40px 0;
+
+  @include bp(992px) {
+    padding-bottom: 50px;
+  }
+
+  .subheading, h1, h3, p {
+    max-width: 730px;
+    margin: 0 auto 10px;
+    text-align: center;
+  }
+
+  .subheading {
+    @include set-text($taupe, 1.8rem, 2.8rem, sans-med, uppercase);
+  }
+
+  h1,
+  h3 {
+    @include set-text($taupe, 4rem, 4.8rem, serif-reg);
+    margin: 0 auto 20px;
+
+    @include bp(992px) {
+      font-size: 4.6rem;
+      line-height: 5.4rem;
+    }
+  }
+
+  p {
+    @include set-text($taupe, 1.8rem, 2.8rem, sans-reg);
+  }
+
+  .text-content {
+    text-align: center;
+  }
+
+  .button {
+    margin: 10px auto 0;
+    display: inline-block;
+
+    @include bp(992px) {
+      margin: 20px auto 10px;
+    }
+  }
+}

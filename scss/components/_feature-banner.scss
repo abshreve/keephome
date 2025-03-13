@@ -1,0 +1,169 @@
+.feature-banner {
+    position: relative;
+    overflow: visible;
+    margin: 80px auto;
+
+    .feature-banner__stripe {
+        background: $pippin;
+        width: 100%;
+        height: 960px;
+        position: absolute;
+        transform: skewY(23deg);
+        z-index: -1;
+
+        @media (min-width: $bp-1200) {
+            height: 770px;
+            top: 12%;
+        }
+    }
+
+    .feature-banner__container {
+        position: relative;
+        max-width: 1440px;
+        margin: 0 auto;
+        padding: 0;
+        display: grid;
+        display: -ms-grid;
+        grid-template-rows: auto auto;
+        grid-template-columns: auto;
+        -ms-grid-rows: auto auto;
+        -ms-grid-columns: auto;
+
+        @media (min-width: $bp-1200) {
+            display: block;
+        }
+
+        .feature-banner__image {
+            margin: 0;
+            min-width: 100%;
+            grid-row-start: 1;
+            grid-column-start: 1;
+            -ms-grid-row: 1;
+            -ms-grid-column: 1;
+
+            @media (min-width: $bp-1200) {
+                width: auto;
+            }
+
+            .feature-banner__img {
+                margin: 0 auto;
+
+                @media (min-width: $bp-1200) {
+                    margin: 0;
+                }
+            }
+        }
+
+        .feature-banner__content {
+            width: 100%;
+            background: #fff;
+            position: relative;
+            padding: 30px 20px;
+            z-index: 999;
+            grid-row-start: 2;
+            grid-column-start: 1;
+            -ms-grid-row: 2;
+            -ms-grid-column: 1;
+
+            @media (min-width: $bp-992) {
+                padding: 50px;
+            }
+
+            @media (min-width: $bp-1200) {
+                position: absolute;
+                top: 14%;
+                right: 0;
+                padding: 60px 160px 60px 65px;
+                width: 56%;
+            }
+
+            .feature-banner__topic {
+                display: block;
+                text-transform: uppercase;
+                margin-bottom: 20px;
+                @include apply_font(sans-med);
+            }
+
+            .feature-banner__heading {
+                margin-bottom: 30px;
+                font-size: 4rem;
+
+                @media (min-width: $bp-1200) {
+                    font-size: 4.6rem;
+                }
+            }
+
+            .feature-banner__copy {
+                margin-bottom: 20px;
+                display: block;
+            }
+
+            .feature-banner__cta {
+                width: 100%;
+
+                @media (min-width: $bp-1200) {
+                    width: auto;
+                }
+            }
+        }
+    }
+
+    &.feature-banner--quote {
+        .feature-banner__stripe {
+
+            @media (min-width: $bp-1200) {
+                top: 64%;
+            }
+        }
+
+        .feature-banner__container {
+            padding: 0 15px;
+
+            .feature-banner__image {
+                .feature-banner__img {
+                    @media (min-width: $bp-1200) {
+                        margin: 0 0 0 auto;
+                    }
+                }
+            }
+
+            .feature-banner__content {
+                width: 90%;
+                margin: -60px auto 0;
+
+                @media (min-width: $bp-1200) {
+                    left: 0;
+                    right: auto;
+                    margin: 0;
+                    padding: 60px 65px;
+                    width: 56%;
+                }
+
+                .feature-banner__svg {
+                    width: 60px;
+                    display: block;
+                }
+
+                .feature-banner__copy {
+                    width: 100%;
+                    margin-bottom: 5px;
+                    line-height: 1.25;
+                    @include apply-font(serif-reg);
+                    font-size: 3.6rem;
+
+                    @media (min-width: $bp-1200) {
+                        font-size: 4.6rem;
+                    }
+                }
+
+                .feature-banner__attribution {
+                    text-transform: uppercase;
+                    display: block;
+                    font-size: 1.8rem;
+                    @include apply-font(sans-med);
+                    margin-bottom: 30px;
+                }
+            }
+        }
+    }
+}

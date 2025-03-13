@@ -1,0 +1,1 @@
+import CharacterCounter from './classes/CharacterCounter'

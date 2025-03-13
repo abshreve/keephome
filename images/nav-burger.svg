@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="31px" height="20px" viewBox="0 0 31 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 57.1 (83088) - https://sketch.com -->
+    <title>S_Nav_Burger</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="S-/-Nav-/-Default" transform="translate(-336.000000, -28.000000)" fill="#473D34" fill-rule="nonzero">
+            <g id="Nav">
+                <path d="M366,46 C366.552285,46 367,46.4477153 367,47 C367,47.5522847 366.552285,48 366,48 L337,48 C336.447715,48 336,47.5522847 336,47 C336,46.4477153 336.447715,46 337,46 L366,46 Z M366,37 C366.552285,37 367,37.4477153 367,38 C367,38.5522847 366.552285,39 366,39 L337,39 C336.447715,39 336,38.5522847 336,38 C336,37.4477153 336.447715,37 337,37 L366,37 Z M366,28 C366.552285,28 367,28.4477153 367,29 C367,29.5522847 366.552285,30 366,30 L337,30 C336.447715,30 336,29.5522847 336,29 C336,28.4477153 336.447715,28 337,28 L366,28 Z" id="S_Nav_Burger"></path>
+            </g>
+        </g>
+    </g>
+</svg>

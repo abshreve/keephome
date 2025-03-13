@@ -1,0 +1,108 @@
+.column-two {
+  display: flex;
+  .toolbar {
+    display: none;
+  }
+
+  @include bp-992 {
+    position: relative;
+
+    .toolbar {
+      display: block;
+    }
+  }
+}
+
+.banner___inner {
+  margin: 40px auto 0;
+  @include bp-992 {
+    margin: 90px auto 30px;
+  }
+
+  .banner___text {
+    margin-bottom: 40px;
+
+    h3 {
+      @include set-text($taupe, 4.5rem, 5.5rem, 'serif-med');
+
+      @include bp-992 {
+        font-size: 4.1rem;
+        line-height: 6.7rem;
+      }
+    }
+
+    h5 {
+      font-size: 1.8rem;
+      line-height: 2.8rem;
+    }
+    .subheading {
+      padding-bottom: 5px!important;
+      text-transform: uppercase;
+      font-size: 1.6rem;
+    }
+  }
+
+
+
+  .d-inline-block {
+    margin-left: 0;
+    width: 30%;
+    text-align: left!important;
+    padding-top: 20px;
+  }
+
+  .fa-chevron-right {
+    float: right;
+    padding-top: 5px;
+    padding-left: 7%;
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  .banner__cta_button {
+    @include set-text($allports, 1.4rem, 2.1rem, 'sans-med', uppercase);
+
+    &:after {
+      content: '';
+      width: 10px;
+      height: 18px;
+      position: relative;
+      top: 3px;
+      margin-left: 10px;
+      background: url('/wp-content/themes/keephome/images/Arrow/Teal.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+      display: inline-block;
+    }
+
+  }
+
+
+  @media only screen and (max-width: 900px) {
+    .banner___text {
+      padding-right: 5%;
+    }
+    .d-inline-block {
+      padding-top: 0px!important;
+    }
+    .banner__cta_button {
+      width: 100%;
+      padding-top: 10px;
+      padding-bottom: 20px;
+      float: left !important;
+    }
+    align-items: center;
+    h5 {
+      padding-bottom: 15px;
+    }
+    .subheading {
+      padding-bottom: 10px!important;
+      width: 100%
+    }
+  }
+  @media only screen and (max-width: 500px) {
+    .banner__cta_button {
+      width: 150%;
+    }
+  }
+}

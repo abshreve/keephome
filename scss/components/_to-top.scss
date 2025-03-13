@@ -1,0 +1,25 @@
+.to-top {
+  border-radius: 0;
+  padding: 12px;
+  background: $botticelli;
+  border: 1px solid $westar;
+  bottom: -300px;
+  transition: all 0.25s ease-out;
+
+  .to-top__icon {
+    transition: all 0.25s ease-out;
+  }
+
+  &.is-fixed {
+    position: fixed;
+    z-index: 1010;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &.btn-visible {
+    bottom: 15px;
+  }
+}

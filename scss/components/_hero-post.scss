@@ -1,0 +1,307 @@
+.hero-post__wrap {
+  overflow: hidden;
+  .hero-post.blog-top,
+  .hero-post {
+    margin-top: 0;
+
+    @include bp-992 {
+      margin-bottom: 60px;
+    }
+
+    .hero-post__container {
+      width: 100%;
+      margin: 0 auto;
+      padding: 0;
+    }
+
+    figure.hero-post__image {
+      position: relative;
+      z-index: 1;
+      margin: 0;
+    }
+
+    .hero-post__content {
+      margin-top: -120px;
+      width: calc(100% - 40px);
+      margin-left: 20px;
+      z-index: 15;
+
+      @include bp-992 {
+        padding: 30px 50px;
+      }
+
+      @include bp-1200 {
+        top: 20%;
+        right: 120px;
+        width: 56%;
+        margin: 0;
+      }
+
+      @include bp(1550px) {
+        right: 60px;
+      }
+
+      .hero-post__cta {
+        @include bp($bp-768) {
+          width: auto;
+        }
+      }
+    }
+
+    .hero-post__content {
+      width: 100%;
+      background: #fff;
+      position: relative;
+      padding: 30px 20px;
+      z-index: 999;
+
+      @media (min-width: $bp-992) {
+        padding: 50px;
+      }
+
+      @media (min-width: $bp-1200) {
+        position: absolute;
+        top: 14%;
+        right: 0;
+        padding: 60px 160px 60px 65px;
+        width: 56%;
+      }
+
+      .hero-post__topic {
+        display: block;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        @include apply_font(sans-med);
+      }
+
+      .hero-post__heading {
+        margin-bottom: 30px;
+        font-size: 4rem;
+
+        @media (min-width: $bp-1200) {
+          font-size: 4.6rem;
+        }
+      }
+
+      .hero-post__copy {
+        margin-bottom: 20px;
+        display: block;
+      }
+
+      .hero-post__cta {
+        width: 100%;
+
+        @media (min-width: $bp-1200) {
+          width: auto;
+        }
+      }
+    }
+
+    &.pink {
+      position: relative;
+
+      @include bp-1200 {
+        padding-top: 70px;
+        margin: 0 5% 0 0;
+      }
+
+      .hero-post__container {
+        background: $pippin;
+
+        &::before {
+          content: '';
+          position: absolute;
+          width: 100%;
+          height: 30px;
+          background: #fff;
+        }
+
+        @include bp-1200 {
+          &::before {
+            content: '';
+            position: absolute;
+            background: #fff;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 660px;
+            transform: skew(-27deg);
+          }
+        }
+
+        .hero-post__content {
+          width: 94%;
+          margin: 0 auto;
+          bottom: 30px;
+
+          @include bp-1200 {
+            margin: 0;
+            max-width: 540px;
+            padding: 50px;
+            bottom: auto;
+            top: 18%;
+            left: 580px;
+          }
+
+          @media (min-width: $xl) {
+            left: 800px;
+          }
+
+          @media (min-width: $xxl) {
+            left: 900px;
+          }
+        }
+
+        figure.hero-post__image {
+          left: -20px;
+
+          @include bp-1200 {
+            margin: 0 0 70px 0;
+            left: auto;
+            top: -70px;
+          }
+        }
+      }
+    }
+
+    &.blue {
+      position: relative;
+      background: $black-squeeze;
+
+      &::before {
+        content: '';
+        height: 100%;
+        width: 35%;
+        transform: skew(27deg);
+        background: $black-squeeze;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        z-index: 2;
+
+        @include bp($bp-1200) {
+          width: 40%;
+        }
+
+        @include bp($bp-1200) {
+          display: none;
+        }
+      }
+
+      figure.hero-post__image {
+        position: relative;
+        z-index: 1;
+        right: 140px;
+
+        @include bp($bp-768) {
+          right: 0;
+        }
+
+        img {
+          height: 100%;
+          width: auto;
+          max-width: none;
+
+          @include bp($bp-992) {
+            height: auto;
+            max-width: 100%;
+            margin-right: 0;
+            margin-left: auto;
+          }
+        }
+      }
+
+      .hero-post__container {
+        @media (min-width: $bp-992) {
+          display: block;
+        }
+      }
+
+      .hero-post__content {
+        background: transparent;
+        width: 100%;
+        margin: -300px 0 0;
+
+        @include bp-992 {
+          position: absolute;
+          padding: 30px 50px;
+          top: 20%;
+          left: 0;
+          width: 56%;
+          max-width: 600px;
+          margin: 0;
+        }
+
+        @media(min-width: $xl) {
+          left: auto;
+          right: 50%;
+        }
+
+        .hero-post__topic {
+          display: block;
+        }
+
+        .hero-post__copy {
+          margin-top: 20px;
+
+          @include bp(0, 992px) {
+            background: white;
+            padding-top: 20px;
+            position: relative;
+
+            span,
+            a {
+              position: relative;
+            }
+
+            &:before {
+              position: absolute;
+              content: '';
+              left: -100px;
+              right: -100px;
+              top: 0;
+              bottom: -100px;
+              background: white;
+              z-index: -1;
+            }
+          }
+
+          @include bp-992 {
+            max-width: 382px;
+          }
+        }
+
+        .hero-post__heading {
+          background: white;
+          display: inline;
+          line-height: 5.2rem;
+          padding: 0 10px;
+          -webkit-box-decoration-break: clone;
+          box-decoration-break: clone;
+
+          @include bp-992 {
+            line-height: 6.2rem;
+          }
+
+          // box-decoration-break is not supported in ie, so remove padding
+          @media all and (-ms-high-contrast: none),
+          (-ms-high-contrast: active) {
+            padding: 0;
+
+            @include bp-992 {
+              padding: 0;
+            }
+          }
+        }
+
+        .hero-post__cta {
+          position: relative;
+
+          @include bp-768 {
+            width: auto;
+          }
+        }
+      }
+    }
+  }
+}

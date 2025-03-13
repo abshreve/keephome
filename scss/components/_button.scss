@@ -1,0 +1,98 @@
+.button {
+    border: 2px solid $allports;
+    text-transform: uppercase;
+    padding: 12px 30px;
+    color: $allports;
+    display: inline-block;
+    font-size: 1.4rem;
+    text-align: center;
+    transition: all 250ms ease;
+    @include apply_font(sans-bold);
+
+    &--single-line {
+        white-space: nowrap;
+        overflow: hidden;
+        display: flex;
+        flex: 1;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &:disabled {
+        cursor: not-allowed;
+        opacity: 0.3;
+    }
+
+    &:hover {
+        color: #fff;
+        background: $btnHover;
+        border-color: $btnHover;
+    }
+
+    &.btn--blue {
+        border-color: $allports;
+        background: $allports;
+        color: #fff;
+
+        &:hover {
+            color: #fff;
+            background: $btnHover;
+            border-color: $btnHover;
+        }
+    }
+
+    &.btn--tuft-bush {
+        background: $tuft-bush;
+        border-color: $tuft-bush;
+        color: $taupe;
+
+        &:hover {
+            background: darken($tuft-bush, 7%);
+            border-color: darken($tuft-bush, 7%);
+        }
+    }
+
+    &.btn--opal {
+        background: $opal;
+        border-color: $opal;
+        color: $taupe;
+
+        &:hover {
+            background: darken($opal, 7%);
+            border-color: darken($opal, 7%);
+        }
+    }
+
+    &.btn--supernova {
+        background: $supernova;
+        border-color: $supernova;
+        color: $taupe;
+
+        &:hover {
+            background: darken($supernova, 7%);
+            border-color: darken($supernova, 7%);
+        }
+    }
+
+    &.btn--trans {
+        border-color: $taupe;
+        color: $taupe;
+        background: transparent;
+
+        &:hover {
+            color: #fff;
+            background: $taupe;
+        }
+    }
+}
+
+/*** legacy ***/
+.btn {
+    text-transform: uppercase;
+
+    @include bp-576 {
+        font-size: 1.4rem;
+        padding-left: 28px;
+        padding-right: 28px;
+    }
+}

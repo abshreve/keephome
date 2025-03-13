@@ -1,0 +1,79 @@
+@font-face {
+    font-family: 'Untitled Serif Regular';
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+000-5FF; /* Download only latin glyphs */  
+    src: local("../fonts/WebFonts/UntitledSerifWeb-Regular.woff");
+    src: url("../fonts/WebFonts/UntitledSerifWeb-Regular.woff");
+}
+
+@font-face {
+    font-family: 'Untitled Serif Medium';
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+000-5FF; /* Download only latin glyphs */  
+    src: local("../fonts/WebFonts/UntitledSerifWeb-Medium.woff");
+    src: url("../fonts/WebFonts/UntitledSerifWeb-Medium.woff");
+}
+
+// @font-face {
+//     font-family: 'Untitled Serif Bold';
+//     font-weight: 400;
+//     font-style: normal;
+//     font-display: swap;
+//     unicode-range: U+000-5FF; /* Download only latin glyphs */  
+//     src: local("../fonts/WebFonts/UntitledSerifWeb-Bold.woff");
+//     src: url("../fonts/WebFonts/UntitledSerifWeb-Bold.woff");
+// }
+
+// @font-face {
+//     font-family: 'Untitled Sans Light';
+//     font-weight: 400;
+//     font-style: normal;
+//     font-display: swap;
+//     unicode-range: U+000-5FF; /* Download only latin glyphs */  
+//     src: local("../fonts/UntitledSansWeb/UntitledSansWeb-Light.woff");
+//     src: url("../fonts/UntitledSansWeb/UntitledSansWeb-Light.woff");
+// }
+
+@font-face {
+    font-family: 'Untitled Sans Regular';
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+000-5FF; /* Download only latin glyphs */  
+    src: local("../fonts/UntitledSansWeb/UntitledSansWeb-Regular.woff");
+    src: url("../fonts/UntitledSansWeb/UntitledSansWeb-Regular.woff");
+}
+
+@font-face {
+    font-family: 'Untitled Sans Medium';
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+000-5FF; /* Download only latin glyphs */  
+    src: local("../fonts/UntitledSansWeb/UntitledSansWeb-Medium.woff");
+    src: url("../fonts/UntitledSansWeb/UntitledSansWeb-Medium.woff");
+}
+
+@font-face {
+    font-family: 'Untitled Sans Bold';
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+000-5FF; /* Download only latin glyphs */  
+    src: local("../fonts/UntitledSansWeb/UntitledSansWeb-Bold.woff");
+    src: url("../fonts/UntitledSansWeb/UntitledSansWeb-Bold.woff");
+}
+
+// @font-face {
+//     font-family: 'Untitled Sans Black';
+//     font-weight: 400;
+//     font-style: normal;
+//     font-display: swap;
+//     unicode-range: U+000-5FF; /* Download only latin glyphs */  
+//     src: local("../fonts/UntitledSansWeb/UntitledSansWeb-Black.woff");
+//     src: url("../fonts/UntitledSansWeb/UntitledSansWeb-Black.woff");
+// }

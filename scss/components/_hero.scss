@@ -1,0 +1,119 @@
+.hero {
+    position: relative;
+    z-index: 15;
+
+    .hero__inner {
+        @include bp-992 {
+            min-height: 992px;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero__image {
+            min-height: 355px;
+            background-size: cover;
+            background-position: center;
+
+            @include bp-992 {
+                min-height: auto;
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                z-index: -1;
+            }
+        }
+
+        .hero__text {
+            padding: 14px 20px 27px;
+
+            @include bp-992 {
+                max-width: 509px;
+                margin-left: 147px;
+            }
+
+            h1 {
+                @include set-text($taupe, 4rem, 1, 'serif-med');
+
+                @include bp-576 {
+                    font-size: 4.5rem;
+                }
+
+                @include bp-992 {
+                    font-size: 5.4rem;
+                    line-height: 6.7rem;
+                }
+            }
+
+
+            .hero__description {
+                @include apply-font(sans-reg);
+                font-size: 2rem;
+                line-height: 2.8rem;
+                margin-top: 17px;
+
+                @include bp-992 {
+                    margin-top: 32px;
+                    margin-bottom: 32px;
+                }
+            }
+
+        }
+
+        .hero__btns {
+            margin-top: 17px;
+            margin-bottom: 14px;
+            
+            &.hero__btns--internal {
+                display: flex;
+                flex-direction: column;
+
+                @media(min-width: $xs) {
+                    flex-direction: row;
+                }
+
+                .button {
+                    width: 100%;
+                    margin-bottom: 8px;
+
+                    @media(min-width: $xs) {
+                        margin-bottom: 0;
+
+                        &:not(:last-child) {
+                            margin-right: 5px;
+                        }
+                    }
+                }
+            }
+
+            &.hero__btns--external {
+                display: flex;
+                flex-direction: row;
+
+                @media( min-width: $bp-768) {
+                    display: inline-block;
+                }
+
+                .button {
+                    width: 100%;
+                    display: inline-flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    &:first-of-type {
+                        margin-right: 10px;
+                    }
+
+                    @media( min-width: $bp-768) {
+                        width: auto;
+                    }
+
+                    .icon {
+                        margin-right: 5px;
+                    }
+                }
+            }
+        }
+    }
+}

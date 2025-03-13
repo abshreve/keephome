@@ -1,0 +1,50 @@
+.title-bar {
+  background: $hint-of-red;
+  padding: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .title-bar__link-wrap {
+    width: 100%;
+
+    &.title-bar__link-wrap--right {
+      text-align: right;
+    }
+
+    .title-bar__link {
+      .title-bar__label {
+        display: none;
+
+        @include bp-768 {
+          display: inline;
+          color: $sand-dune;
+          transition: all 0.25s ease;
+          text-transform: uppercase;
+        }
+      }
+
+      .title-bar__icon {
+        color: $sand-dune;
+        transition: all 0.25s ease;
+      }
+
+      &:hover {
+        .title-bar__label,
+        .title-bar__icon {
+          color: $allports;
+        }
+      }
+    }
+  }
+
+  @include bp-992 {
+    padding: 50px;
+  }
+
+  &__title {
+    text-align: center;
+    margin: 0;
+    width: 100%;
+  }
+}

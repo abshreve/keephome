@@ -1,0 +1,51 @@
+{
+  "name": "wordpress-bootstrap4-laravelmix",
+  "version": "1.0.0",
+  "engines": {
+    "node": "~8.0",
+    "npm": "~6.0"
+  },
+  "private": true,
+  "description": "",
+  "repository": "",
+  "browserslist": [
+    "cover 99.5%"
+  ],
+  "scripts": {
+    "dev": "npm run development",
+    "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch": "npm run development -- --watch",
+    "watch-poll": "npm run watch -- --watch-poll",
+    "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "prod": "npm run production",
+    "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+  },
+  "main": "index.js",
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@glidejs/glide": "^3.4.1",
+    "@vimeo/player": "^2.14.1",
+    "es6-promise-promise": "^1.0.0",
+    "slick-carousel": "^1.8.1",
+    "tweezer.js": "^1.5.0"
+  },
+  "devDependencies": {
+    "axios": "^0.18.1",
+    "bootstrap": "^4.5.3",
+    "cross-env": "^5.2.0",
+    "eslint": "^7.20.0",
+    "jquery": "^3.5.1",
+    "laravel-mix": "^4.1.2",
+    "lodash": "^4.17.20",
+    "modernizr": "^3.11.4",
+    "popper.js": "^1.16.1",
+    "resolve-url-loader": "^2.3.2",
+    "sass": "^1.29.0",
+    "sass-loader": "^7.1.0",
+    "script-loader": "^0.7.2",
+    "vue": "^2.6.12",
+    "vue-template-compiler": "^2.6.12",
+    "webpack-livereload-plugin": "^2.3.0"
+  }
+}

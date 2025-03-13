@@ -1,0 +1,48 @@
+{
+    "key": "group_5f6b6a6eed79c",
+    "title": "Page Options",
+    "fields": [
+        {
+            "key": "field_5f6b6a7d8fe1c",
+            "label": "Logo",
+            "name": "logo",
+            "type": "image",
+            "instructions": "This will appear in the header and will fall back to the main logo if not used.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1600875189
+}

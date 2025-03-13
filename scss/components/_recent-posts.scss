@@ -1,0 +1,176 @@
+.recent-posts {
+    position: relative;
+    padding: 33px 0;
+    // padding: 18px 0 18px 22px;
+    @include bp-1200 {
+        padding: 100px 0;
+    }
+
+
+    $slide-width: 265px;
+    $slide-inner-width: $slide-width - 10px;
+
+    &__head {
+        margin-bottom: 34px;
+
+        @include bp-992 {
+            max-width: $slide-width * 3;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        @include bp-1200 {
+            margin-bottom: 18px;
+            max-width: $slide-width * 4;
+        }
+
+        h3 {
+            line-height: 1;
+        }
+
+        h6.link {
+            line-height: 1;
+        }
+
+        .recent-posts_view-all-link {
+            margin-left: 20px;
+            margin-top: 8px;
+        }
+    }
+
+    .recent-posts-slider, .recent-posts-stacked {
+        .slick-list {
+            @include bp-992 {
+                max-width: $slide-width * 3;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            @include bp-1200 {
+                max-width: $slide-width * 4;
+            }
+        }
+
+        @include bp-max($bp-992) {
+            .slick-slide {
+                // &:not(.slick-active) {
+                //     opacity: 0.5;
+                // }
+                opacity: 0.5;
+
+                &.slide--visible {
+                    opacity: 1;
+                }
+            }
+        }
+
+        .recent-post-slide {
+            &__outer {
+                width: $slide-width;
+            }
+
+            &__inner {
+                margin-left: auto;
+                margin-right: auto;
+                background-color: white;
+                width: $slide-inner-width;
+                min-height: 448px;
+                border: 1px solid $westar;
+            }
+
+            &__img {
+                width: 100%;
+                margin-bottom: 16px;
+            }
+
+            &__text {
+                padding: 10px 16px;
+            }
+
+            h4 a {
+                color: inherit;
+                line-height: 2.4rem;
+
+                &:hover {
+                    color: $allports;
+
+                    &:after {
+                        content: '';
+                        width: 10px;
+                        height: 18px;
+                        margin-left: 5px;
+                        background: url('/wp-content/themes/keephome/images/Arrow/Teal.png');
+                        background-size: cover;
+                        background-repeat: no-repeat;
+                        display: inline-block;
+                    }
+                }
+            }
+        }
+        &.recent-posts-stacked {
+            .recent-post-slide {
+                &__outer {
+                    max-width: 100%;
+                    width: 360px;
+                    margin: 0 auto 20px;
+                    @include bp(992px) {
+                        height: 100%;
+                    }
+                }
+                &__inner {
+                    max-width: 100%;
+                    width: 350px;
+                    @include bp(992px) {
+                        height: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    .posts__stripe {
+        background: $black-squeeze;
+        width: 100%;
+        height: 960px;
+        position: absolute;
+        transform: skewY(23deg);
+        z-index: -1;
+
+        @media (min-width: $bp-1200) {
+            height: 770px;
+            top: 68%;
+        }
+    }
+}
+
+.single-post .recent-posts {
+    background: $solitaire;
+
+    @include bp(0, 1199px) {
+        padding: 18px 0 18px 22px;
+    }
+}
+
+.recommended-posts {
+    h3, p {
+        max-width: 730px;
+        margin: 0 auto 10px;
+        text-align: center;
+    }
+    h3 {
+        @include set-text($taupe, 4rem, 4.8rem, serif-reg);
+        margin: 0 auto 20px;
+        @include bp(992px) {
+            font-size: 4.6rem;
+            line-height: 5.4rem;
+        }
+    }
+    p {
+        @include set-text($taupe, 1.8rem, 2.8rem, sans-reg);
+        margin-bottom: 40px;
+
+        @include bp(992px) {
+            margin-bottom: 60px;
+        }
+    }
+}

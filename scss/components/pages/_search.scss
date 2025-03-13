@@ -1,0 +1,14 @@
+.content-search {
+	.page-title {
+		@include apply-font(serif-reg);
+		font-size: 2rem;
+		position: relative;
+		z-index: 2000;
+	}
+	article {
+		margin-bottom: 1rem;
+		.article-header {
+			color: $allports;
+		}
+	}
+}

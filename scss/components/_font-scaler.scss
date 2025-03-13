@@ -1,0 +1,18 @@
+.font-scaler {
+    width: auto;
+    position: relative;
+    padding: 10px 30px;
+    border: 1px solid $westar;
+    text-align: center;
+
+    .font-scaler__label {
+        display: inline;
+        transition: all 0.25s ease-out;
+    }
+
+    &.font-lg {
+        .font-scaler__label {
+            transform: scale(1.4);
+        }
+    }
+}

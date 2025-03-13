@@ -1,0 +1,16 @@
+.video-embed-component {
+  padding-bottom: 30px;
+  @include bp(768px) {
+    padding-bottom: 0;
+  }
+  iframe {
+    width: 100%;
+    height: 230px;
+    @include bp(768px) {
+      height: 500px;
+    }
+    @include bp(1200px) {
+      height: 614px;
+    }
+  }
+}

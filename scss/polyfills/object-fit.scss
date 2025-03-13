@@ -1,0 +1,10 @@
+.object-fit {
+	&.object-fit--cover {
+		background-position: center;
+		background-size: cover;
+
+		img {
+			opacity: 0;
+		}
+	}
+}

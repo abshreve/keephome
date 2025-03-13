@@ -1,0 +1,165 @@
+.contact-form,
+.hero-post--form {
+    padding-top: 30px;
+    position: relative;
+    background: #fff;
+    margin: 30px auto;
+
+    @media (min-width: $bp-992) {
+        background: transparent;
+        margin: 80px auto 40px;
+    }
+
+    .contact-form__stripe {
+        background: $black-squeeze;
+        width: 100%;
+        height: 960px;
+        position: absolute;
+        transform: skewY(23deg);
+        z-index: -1;
+
+        @media (min-width: $bp-1200) {
+            height: 770px;
+            top: 12%;
+        }
+    }
+
+    figure.contact-form__img {
+        margin-bottom: 30px;
+        width: 220px;
+
+        @media (min-width: $bp-992) {
+            display: none;
+        }
+
+        img {
+            width: 220px;
+        }
+    }
+
+    .contact-form__container {
+        background: #fff;
+        width: 100%;
+        max-width: 810px;
+        position: relative;
+
+        figure.contact-form__img {
+            display: none;
+
+            @media (min-width: $bp-992) {
+                display: block;
+                position: absolute;
+                left: -180px;
+                top: -40px;
+            }
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+    .contact-form__content {
+        padding: 15px 0 30px;
+
+        @media (min-width: $bp-992) {
+            padding: 80px 35px 40px;
+        }
+
+        .contact-form__header {
+            h2 {
+                text-align: center;
+                margin-bottom: 15px;
+                font-family: Helvetica, Arial, sans-serif;
+                font-weight: 600;
+
+                @media (min-width: $bp-992) {
+                    text-align: left;
+                }
+            }
+
+            span {
+                @include apply_font(sans-reg);
+            }
+        }
+
+        .contact-form__form {
+            .contact-form__inputs {
+                display: flex;
+                flex-direction: column;
+                margin-top: -30px;
+
+                @media (min-width: $bp-992) {
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                }
+
+                .contact-form__input-wrap {
+                    width: 100%;
+                    position: relative;
+
+                    @media (min-width: $bp-992) {
+                        padding: 0;
+
+                        &.input--fname {
+                            width: 50%;
+                            padding-right: 15px;
+                        }
+
+                        &.input--lname {
+                            width: 50%;
+                            padding-left: 15px;
+                        }
+
+                        &.input--email {
+                            width: 100%;
+                        }
+                    }
+
+                    .contact-form__label {
+                        opacity: 0;
+                        transition-delay: 0.1s;
+                        transition: all 0.25s ease;
+                        pointer-events: none;
+                        position: relative;
+                        top: 41px;
+
+                        &.active {
+                            top: 18px;
+                            opacity: 1;
+                        }
+                    }
+
+                    .contact-form__input {
+                        background: transparent;
+                        border-bottom: 1px solid $sand-dune;
+                        margin-bottom: 15px;
+                        padding: 15px 0 3px;
+                        width: 100%;
+                        font-size: 2.4rem;
+                        font-family: "Untitled Sans Regular",sans-serif;
+                        font-style: normal;
+                        color: $taupe;
+
+                        &:focus{
+                            outline: 0;
+                        }
+
+                        &:focus::placeholder{
+                            color:transparent;
+                        }
+                    }
+                }
+            }
+
+            .button {
+                margin-top: 15px;
+            }
+
+            .contact-form__submit:disabled,
+            .contact-form__submit[disabled] {
+                opacity: 0.3;
+            }
+        }
+    }
+}

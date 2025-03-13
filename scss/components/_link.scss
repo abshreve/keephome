@@ -1,0 +1,42 @@
+.link {
+  @include set-text($allports, 1.4rem, 2.4rem, sans-med, uppercase);
+
+  &:hover {
+    color: $btnHover;
+  }
+
+  &.link--taupe {
+    color: $taupe;
+
+    &:hover {
+      color: darken($taupe, 7%);
+    }
+
+    &.link--arrow {
+      &::after {
+        content: '';
+        background-image: url('#{$img-path}Arrow/Brown.svg');
+      }
+    }
+  }
+
+  &.link--arrow {
+    position: relative;
+
+    &::after {
+      content: '';
+      background-image: url('#{$img-path}Arrow/Teal.svg');
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 10px;
+      height: 14px;
+      right: -20px;
+      top: 2px;
+      position: absolute;
+    }
+  }
+
+  a {
+    color: inherit;
+  }
+}

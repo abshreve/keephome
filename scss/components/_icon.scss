@@ -1,0 +1,15 @@
+.icon {
+  display: inline-block;
+  margin: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  &.icon--angle-left {
+    background-image: url('../images/icon-arrow-icon.svg');
+  }
+
+  &.icon--angle-down {
+    background-image: url('../images/icon-angle-down.svg');
+  }
+}

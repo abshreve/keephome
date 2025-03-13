@@ -1,0 +1,12 @@
+.content-category {
+  .feature-banner .feature-banner__stripe {
+    background: $black-squeeze;
+  }
+  > .feature-banner .feature-banner__stripe {
+    display: block;
+  }
+
+  .feature-banner ~ .feature-banner .feature-banner__stripe {
+    display: none;
+  }
+}

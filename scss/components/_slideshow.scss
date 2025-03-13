@@ -1,0 +1,121 @@
+.slideshow {
+    margin: 30px 0;
+    position: relative;
+
+    .container {
+        position: relative;
+    }
+    
+    .slideshow__stripe {
+        width: 100%;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        position: absolute;
+        background: $black-squeeze;
+        margin-top: 60px;
+    }
+
+    .slideshow__wrap {
+        .glide__slides .slideshow__slide{
+            max-width: 100%;
+            opacity: 0;
+            transition: opacity 0.25s;
+
+            &.glide__slide--active {
+                opacity: 1;
+            }
+
+            .slide__content {
+                position: relative;
+
+                .slide__image {
+                    margin: 0;
+                    width: 100%;
+                }
+                
+                .slide__copy-wrap {
+                    position: absolute;
+                    bottom: 30px;
+                    left: 30px;
+                    max-width: 540px;
+                    display: none;
+                    margin-left: 0;
+
+                    @media (min-width: $bp-768) {
+                        display: inline;
+                    }
+                }
+            }
+
+            .slide__copy-wrap {
+                margin-left: 8px;
+
+                @media (min-width: $bp-768) {
+                    display: none;
+                }
+            }
+
+            .slide__caption {
+                padding: 8px 0 0;
+                display: block;
+                margin-bottom: 15px;
+            }
+        }
+
+        .slideshow__controls {
+            .glide__arrow {
+                border: 0;
+                border-radius: 0;
+                padding: 0;
+                background: #fff;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 50px;
+                height: 50px;
+                top: 180px;
+                transition: all 0.1s;
+        
+                &.glide__arrow--right {
+                    right: 0;
+                }
+
+                &.glide__arrow--left {
+                    left: 0;
+                }
+
+                @media(min-width: $bp-768) {
+                    width: 68px;
+                    height: 68px;
+                    top: 40%;
+            
+                    &.glide__arrow--right {
+                        right: -27px;
+                    }
+
+                    &.glide__arrow--left {
+                        left: -27px;
+                    }
+                }
+
+                img {
+                    max-width: 100%;
+                }
+            }
+        }
+    }
+
+    .slide__copy-wrap {
+        width: 100%;
+
+        .slide__copy {
+            line-height: 1.8;
+            font-style: normal;
+            box-shadow: 0 0 0 8px #fff;
+            background-color: #fff;
+            @include apply_font()
+        }
+    }
+}

@@ -1,0 +1,106 @@
+.category-card {
+    margin-bottom: 30px;
+
+    .category-card__inner {
+        display: flex;
+        flex-direction: column;
+        background: #fff;
+        border: 1px solid $westar;
+
+        @media (min-width: $bp-992) {
+            flex-direction: row;
+        }
+
+        .category-card__image {
+            width: 100%;
+
+            @media (min-width: $bp-992) {
+                width: 60%;
+            }
+
+            figure {
+                margin: 0;
+                overflow: hidden;
+                width: auto;
+                height: 100%;
+
+                img {
+                    width: auto;
+                    height: 100%;
+                }
+            }
+
+            .category-card__image--mobile {
+                display: block;
+                width: 100%;
+
+                @media (min-width: $bp-992) {
+                    display: none;
+                }
+            }
+
+            .category-card__image--desktop {
+                display: none;
+
+                @media (min-width: $bp-992) {
+                    display: block;
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                }
+
+            }
+        }
+
+        .category-card__content-wrap {
+            width: 100%;
+            padding: 24px 16px;
+
+            @media (min-width: $bp-992) {
+                padding: 35px 50px;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: flex-start;
+            }
+
+            .category-card__title {
+                width: 100%;
+
+                h3 {
+                    @include apply-font();
+                    margin-bottom: 15px;
+                }
+            }
+
+            .category-card__content {
+                width: 100%;
+
+                p,
+                a,
+                span,
+                li {
+                    @include apply-font(sans-reg);
+                    color: $taupe;
+                }
+
+                a {
+                    color: $allports;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+
+                ul {
+                    padding-left: 20px;
+                }
+            }
+
+            .content-banner__link {
+                width: 100%;
+                margin-top: 10px;
+            }
+        }
+    }
+}

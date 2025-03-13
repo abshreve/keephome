@@ -1,0 +1,121 @@
+.filter_advising {
+    padding-bottom: 30px;
+}
+
+.filter_advising .filter_advising_title {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.filter_advising form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 15px 0;
+}
+
+.filter_advising form input[type="text"] {
+    height: 40px;
+    padding: 0 15px;
+    width: calc(100% - 120px);
+    border: 2px solid #008099 !important;
+    border-radius: 0;
+    outline: none;
+}
+
+.filter_advising form input[type="text"]:focus {
+    border-radius: 0;
+    border-color: #008099 !important;
+}
+
+.filter_advising form button {
+    width: 120px;
+    height: 40px;
+    background: #008099;
+    color: #fff;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    outline: none;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    border: 0;
+    transition: 0.4s all;
+}
+
+.filter_advising form button:hover {
+    background: #0097b4;
+}
+
+.filter_advising .filter_note{
+    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+#response_advising .listing-item {
+    padding: 20px 0;
+    border-bottom: 1px solid #dedad6;
+}
+
+#response_advising .listing-item:last-child {
+    border: 0;
+}
+
+#response_advising .contact {
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+#response_advising .contact .advising_contact_description {
+    margin-bottom: 5px;
+}
+
+#response_advising .contact .distance {
+    font-weight: 700;
+}
+
+#response_advising .contact .advising_title_link a {
+    font-weight: 700;
+    font-size: 24px;
+    color: #218b9e;
+    display: block;
+    transition: 0.4s all;
+}
+
+#response_advising .contact .advising_title_link a:hover {
+    color: #000;
+}
+
+#response_advising .description b {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+}
+
+#response_advising .description p {
+    font-size: 15px;
+    margin-bottom: 0px;
+}
+
+#response_advising .no_result {
+	text-align:center;
+}
+
+.advisor-content{
+    font-size: 1.8rem;
+    font-family: Helvetica,Arial,sans-serif;
+}
+
+.advisor-content a{
+    color: #008099;
+    cursor: pointer;
+}
+
+.advisor-content .more-text{
+        display: none;
+    }

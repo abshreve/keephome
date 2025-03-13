@@ -1,0 +1,98 @@
+.input-button{
+  max-width: 800px;
+  margin: 0 auto;
+  .toolbar {
+    display: none;
+  }
+
+  @include bp-992 {
+    position: relative;
+
+    .toolbar {
+      display: block;
+    }
+  }
+}
+
+.content-terms-and-privacy {
+  overflow: hidden;
+
+  @include bp-992 {
+    padding-top: 147px;
+  }
+
+  .page_title_div {
+    background: $hint-of-red;
+    margin-top: 15px;
+    margin-bottom: 30px;
+    padding: 25px;
+  
+    @include bp-992 {
+      padding: 50px;
+    }
+  
+    h1 {
+      text-align: center;
+      margin: 0;
+    }
+  }
+}
+
+.custom-control {
+  margin-left: 15px;
+  margin-top: 50px;
+  margin-right: 50%;
+  margin-bottom: 20px;
+
+  @include bp(768px) {
+    margin-bottom: 40px;
+    margin-left: 0;
+  }
+  @include bp(992px) {
+    cursor: pointer;
+  }
+}
+
+.custom-switch .custom-control-label::before {
+  width: 75px;
+}
+
+.custom-control-label {
+  padding-left: 60px;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  @include bp(400px) {
+    line-height: 3rem;
+  }
+
+  @include bp(992px) {
+    cursor: pointer;
+  }
+}
+
+.custom-control-input:checked ~ .custom-control-label::before {
+  background-color: $tuft-bush;
+  border-color:  $tuft-bush;
+  height: 30px;
+  border-radius: 100px;
+}
+
+
+.custom-switch .custom-control-label::before {
+  background-color: $supernova;
+  border-color:  $supernova;
+  height: 30px;
+  border-radius: 100px;
+}
+.custom-switch .custom-control-label::after {
+  background-color: white;
+  height: 28px;
+  width: 28px;
+  border-radius: 100px;
+  padding-top: 0px;
+  margin-top: -1px;
+  margin-left: -1px;
+}
+.custom-switch .custom-control-input:checked ~ .custom-control-label::after {
+  transform: translateX(43px);
+}

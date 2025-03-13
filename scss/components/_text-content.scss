@@ -1,0 +1,56 @@
+.text-content {
+  position: relative;
+  z-index: 15;
+
+  h3, h4 {
+    &, span {
+      font-size: 2.4rem;
+      line-height: 3.2rem;
+      @include apply-font(sans-med);
+    }
+    margin: 2rem 0 1rem;
+  }
+  p {
+    font-size: 1.8rem;
+    line-height: 2.8rem;
+    @include apply-font(sans-reg);
+    margin-bottom: 2.5rem;
+  }
+
+  &__links {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin-top: 15px;
+    margin-bottom: 30px;
+
+    .button {
+      margin-bottom: 15px;
+
+      @include bp-992 {
+        margin-right: 40px;
+      }
+    }
+
+    .link__wrap {
+      margin-bottom: 10px;
+    }
+
+    &.text-content__links--button {
+      @include bp-992 {
+        flex-direction: row;
+      }
+    }
+
+    &.text-content__links--link {
+      justify-content: flex-start;
+
+      @include bp-992 {
+        align-items: flex-start;
+      }
+    }
+  }
+}

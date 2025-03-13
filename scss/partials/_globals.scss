@@ -1,0 +1,165 @@
+// Check here for IE issues with image tags that reference svgs.
+// https://gist.github.com/larrybotha/7881691
+
+body {
+    @include font-smoothing();
+}
+
+h1 {
+    @include apply-font(serif-med);
+    font-size: 4.5rem;
+    line-height: 5.5rem;
+
+    @include bp-992 {
+        font-size: 5.4rem;
+        line-height: 6.7rem;
+    }
+}
+
+h2 {
+    @include apply-font(serif-reg);
+    font-size: 4rem;
+    line-height: 4.8rem;
+
+    @include bp-992 {
+        font-size: 4.6rem;
+        line-height: 5.4rem;
+    }
+}
+
+h3 {
+    @include apply-font(serif-reg);
+    font-size: 3.2rem;
+    line-height: 4.0rem;
+}
+
+h4 {
+    font-size: 2.4rem;
+    line-height: 3.2rem;
+}
+
+h5 {
+    font-size: 1.8rem;
+    line-height: 2.8rem;
+}
+
+h6,
+.h6,
+small,
+.small,
+button,
+.button {
+    font-size: 1.4rem;
+}
+
+h6 {
+
+    &.dates,
+    &.forms {
+        @include set-text($sand-dune, 1.4rem, 2.8rem, sans-med, uppercase);
+    }
+}
+
+
+.teal {
+    color: $allports;
+}
+
+.bold {
+    @include apply-font(sans-med);
+}
+
+.contain {
+    background-size: contain;
+}
+
+.cover {
+    background-size: cover;
+}
+
+p,
+span,
+a,
+li {
+    font-size: 1.8rem;
+    color: $taupe;
+}
+
+a {
+    outline: none;
+    text-decoration: none;
+
+    &:hover,
+    &:focus,
+    &:link,
+    &:active,
+    &:visited {
+        outline: none;
+        text-decoration: none;
+    }
+
+    &:hover {
+        color: $allports;
+    }
+
+    &.cta-arrow {
+        &::after {
+            content: '';
+            background-image: url("#{$img-path}Arrow/Teal.png");
+            background-repeat: none;
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 10px;
+            height: 22px;
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 8px;
+        }
+    }
+}
+
+
+p {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    @include set-text($taupe, 1.6rem, 2.4rem, sans-reg);
+
+    a,
+    a span {
+        outline: none;
+        text-decoration: none;
+        color: $allports;
+    
+        &:hover,
+        &:focus {
+            outline: none;
+            text-decoration: underline;
+            color: $btnHover;
+        }
+    }
+}
+
+figure {
+    margin: 0;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    min-height: 1px;
+}
+
+.no-box-shadow {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+.content-container {
+    @include bp(1440px) {
+        width: 78%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

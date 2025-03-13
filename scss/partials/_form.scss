@@ -1,0 +1,145 @@
+input,
+select,
+textarea {
+    border: 0;
+    padding: 15px 0;
+    color: $sand-dune;
+    font-size: 1.4rem;
+    border-radius: 0;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 500;
+}
+
+::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: $sand-dune;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 600;
+}
+
+::-moz-placeholder {
+    /* Firefox 19+ */
+    color: $sand-dune;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 600;
+}
+
+:-ms-input-placeholder {
+    /* IE 10+ */
+    color: $sand-dune;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 600;
+}
+
+:-moz-placeholder {
+    /* Firefox 18- */
+    color: $sand-dune;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 600;
+}
+
+/** clear search icon from ie/chrom **/
+/* clears the 'X' from Internet Explorer */
+input[type=search]::-ms-clear {  display: none; width : 0; height: 0; }
+input[type=search]::-ms-reveal {  display: none; width : 0; height: 0; }
+
+/* clears the 'X' from Chrome */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration { display: none; }
+
+label {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    color: $sand-dune;
+    font-family: "Untitled Sans Medium";
+}
+
+.needs-validation {
+    &.was-validated {
+        input:invalid {
+            position: relative;
+
+            &~ .invalid-feedback {
+                display: block;
+            }
+        }
+
+        input:valid {
+            position: relative;
+
+            &~ .valid-feedback {
+                display: block;
+            }
+        }
+    }
+
+    .invalid-feedback {
+        position: absolute;
+        bottom: 0;
+        top: 0;
+        left: 0;
+        right: 0;
+        pointer-events: none;
+
+        .error__msg {
+            bottom: -5px;
+            position: absolute;
+            font-size: 12px;
+            left: 0;
+            color: red;
+        }
+
+        &::after {
+            /*content: "\F06A";
+            font-family: "Font Awesome 5 Pro";*/
+            font-weight: 900;
+            pointer-events: none;
+            font-size: 18px;
+            position: absolute;
+            right: 10px;
+            top: 0;
+            bottom: 0;
+            height: 100%;
+            display: block;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    .valid-feedback {
+        position: absolute;
+        bottom: 0;
+        top: 0;
+        left: 0;
+        right: 0;
+        pointer-events: none;
+
+        &::after {
+            /*content: "\F058";
+            font-family: "Font Awesome 5 Pro";*/
+            font-weight: 900;
+            pointer-events: none;
+            font-size: 18px;
+            position: absolute;
+            right: 10px;
+            top: 0;
+            bottom: 0;
+            height: 100%;
+            display: block;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}

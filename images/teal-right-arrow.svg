@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="10px" height="18px" viewBox="0 0 10 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 58 (84663) - https://sketch.com -->
+    <title>Arrow / Teal</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="4.99993297 4 4.26682224 4.6706079 -4 12.2166565 -2.53375619 14 5 7.12460649 12.5337562 14 14 12.2166565 5.73317776 4.6706079"></polygon>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Blog-Thumbnail-Hover" transform="translate(-435.000000, -81.000000)">
+            <g id="Blog-Thumbnail" transform="translate(211.000000, 0.000000)">
+                <g id="Arrow-/-Teal" transform="translate(224.000000, 81.000000)">
+                    <g id="Color-/-Primary-/-Dark-Indigo">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <use id="Mask" fill="#008099" transform="translate(5.000000, 9.000000) rotate(-270.000000) translate(-5.000000, -9.000000) " xlink:href="#path-1"></use>
+                        <g mask="url(#mask-2)" fill="#008099" id="Dark-Indigo">
+                            <g transform="translate(-198.000000, -32.000000)">
+                                <polygon points="-1.06440985 0 409.972467 0 409.972467 83 -1.06440985 83"></polygon>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

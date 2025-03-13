@@ -1,0 +1,7 @@
+.legal, .plain_english  {
+  max-width: 800px;
+  margin: 0 20px;
+  @include bp-992 {
+    margin: 0 auto;
+  }
+}

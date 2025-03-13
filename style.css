@@ -1,0 +1,11 @@
+/*
+Theme Name: Custom
+Description:
+Author:
+Version: 1.0.0
+*/
+@media (max-width: 991px) {
+    .page-id-9070 .landing-page-hero__container-fluid h1.teal.text-center.text-lg-left {
+        font-size: 4.7rem;
+    }
+}

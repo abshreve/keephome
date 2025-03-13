@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="87px" height="87px" viewBox="0 0 87 87" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 58 (84663) - https://sketch.com -->
+    <title>XL / Video  / Small</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Component-/-Media-Banner-/-Video" transform="translate(-675.000000, -286.000000)">
+            <g id="XL-/-Video--/-Small" transform="translate(675.000000, 286.000000)">
+                <g id="Video-Play-Small">
+                    <path d="M1.5,1.5 L1.5,85.5 L85.5,85.5 L85.5,1.5 L1.5,1.5 Z" id="Rectangle-4" stroke="#FFFFFF" stroke-width="3" fill-rule="nonzero"></path>
+                    <polygon id="Triangle" fill="#FFFFFF" fill-rule="nonzero" stroke-linecap="round" stroke-linejoin="round" points="55 45 35 58 35 32"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

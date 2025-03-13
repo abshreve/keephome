@@ -1,0 +1,157 @@
+.card-banner {
+    padding: 30px 0;
+
+    .card-banner__inner {
+        display: flex;
+        flex-direction: column;
+
+        @media (min-width: $bp-768) {
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        @media (min-width: $bp-992) {
+            flex-direction: row;
+            flex-wrap: nowrap;
+        }
+
+        .card-banner__card {
+            margin-bottom: 10px;
+            width: 100%;
+            background: #fff;
+            position: relative;
+            max-width: 380px;
+            margin: 0 auto 30px;
+
+            &.slide-in {
+                cursor: pointer;
+                overflow: hidden;
+            }
+
+            @media (min-width: $bp-768) {
+                width: 50%;
+                max-width: none;
+                margin: auto;
+                margin-bottom: 30px;
+
+                &:nth-of-type(2n + 1) {
+                    padding-right: 15px;
+                }
+
+                &:nth-of-type(2n) {
+                    padding-left: 15px;
+                }
+            }
+
+            @media (min-width: $bp-992) {
+                margin: 0 12px;
+                padding: 0;
+                width: 100%;
+
+                &:first-of-type {
+                    margin-left: 0;
+                }
+
+                &:last-of-type {
+                    margin-right: 0;
+                }
+
+                &:nth-of-type(2n + 1) {
+                    padding-right: 0;
+                }
+
+                &:nth-of-type(2n) {
+                    padding-left: 0;
+                }
+            }
+
+            .card-banner__card-inner {
+                width: 100%;
+                border: 1px solid $westar;
+            }
+
+            .card-banner__image,
+            .card-banner__img {
+                width: 100%;
+            }
+
+            .card-banner__content-wrap {
+                width: 100%;
+                padding: 5px 10px;
+
+                .card-banner__title {
+                    text-align: center;
+                    color: $allports;
+                    @include apply-font();
+                    margin-bottom: 0.5rem;
+                    font-size: 2.4rem;
+
+                    @media (min-width: $bp-1200) {
+                        font-size: 3.2rem;
+                        margin-bottom: 2rem;
+                    }
+                }
+
+                .card-banner__label {
+                    @include apply-font(sans-med);
+                    font-size: 1.4rem;
+                    text-align: center;
+                    text-transform: uppercase;
+                    margin-bottom: 30px;
+                    padding: 0 20px;
+                    line-height: 1.5;
+
+                    @media (min-width: $bp-1200) {
+                        padding: 0 39px;
+                    }
+                }
+            }
+
+            .card-banner__slide-in {
+                position: absolute;
+                top: -100%;
+                width: 100%;
+                transition: all 0.4s;
+                opacity: 0;
+                background: $solitaire;
+                height: 100%;
+                padding: 0 40px;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: center;
+                z-index: -1;
+
+                @media (min-width: $bp-992) {
+                    justify-content: flex-start;
+                    padding: 60px 20px 0;
+                }
+
+                .slide-in__svg {
+                    margin-bottom: 10px;
+                    display: block;
+                }
+
+                .slide-in__copy {
+                    width: 100%;
+
+                    @media (min-width: $bp-768) {
+                        font-size: 1.4rem;
+                    }
+
+                    @media (min-width: $bp-1200) {
+                        font-size: 1rem;
+                    }
+                }
+            }
+
+            &.active {
+                .card-banner__slide-in {
+                    top: 0;
+                    opacity: 1;
+                    z-index: 1;
+                }
+            }
+        }
+    }
+}

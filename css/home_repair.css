@@ -1,0 +1,547 @@
+#response_advising .home_repair_program {
+	font-size: 16px;
+	margin-bottom: 15px;
+	padding: 20px 0;
+    border-bottom: 1px solid #dedad6;
+}
+#response_advising .home_repair_program:last-child {
+	border-bottom: 0;
+}
+#response_advising .home_repair_program .home_program_name a{
+	font-weight: 700;
+    font-size: 24px;
+    color: #218b9e;
+    display: block;
+    transition: 0.4s all;
+}
+#response_advising .home_repair_program .home_program_name a:hover {
+	color: #000;
+}
+#response_advising .home_repair_program .home_description{
+	margin-bottom: 5px;
+	font-size: 15px;
+}
+
+#response_advising .home_repair_program .home_program_state_zip{
+	text-transform: uppercase;
+	font-size: 15px;
+}
+
+.filter_home_repair_result select,
+.filter_home_repair_result input,
+.select2-selection {
+	height: 40px;
+    padding: 0 15px;
+    width: 100%;
+    border: none !important;
+    border-radius: 0;
+    outline: none;
+	border-bottom: 2px solid #008099!important;
+    padding: 0;
+    font-size:22px;
+    color: #008099;
+}
+
+.filter_home_repair_result select option {
+	padding: 30px;
+}
+
+.filter_home_repair_result h5 {
+	text-align: center;
+	font-size: 14px;
+	font-weight: 700;
+	font-family: Helvetica,Arial,sans-serif;
+}
+
+.select2-selection {
+	height: auto !important;
+	padding: 0 15px !important;
+	width: 100% !important;
+	border-radius: 0 !important;
+	outline: none !important;
+}
+.select2-container .select2-search--inline .select2-search__field {
+	margin-left: 0 !important;
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__choice {
+	margin-bottom: 5px !important;
+	margin-top: 5px !important;
+}
+
+.select2-container .select2-selection--multiple {
+	min-height: 40px !important;
+}
+.select2-search.select2-search--inline {
+	line-height: 1.2 !important;
+}
+.select2-container--default .select2-selection--multiple .select2-selection__choice__display,
+.select2-results__option--selectable{
+	color: #837466 !important;
+    font-size: 1.4rem !important;
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
+	height: 100% !important;
+}
+
+.select2-container--default .select2-results__option--highlighted.select2-results__option--selectable {
+	color: #fff !important;
+}
+
+.filter_home_repair_result {
+	margin-bottom: 50px;
+}
+
+.filter_home_repair_result button {
+    height: 49px;
+    background: #008099;
+    color: #fff;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    outline: none;
+    font-family: Helvetica,Arial,sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    border: 0;
+    transition: 0.4s all;
+	padding: 0 15px;
+	display: block;
+	padding: 12px 30px;
+}
+
+.filter_home_repair_result button:hover,
+.filter_home_repair_result button:focus {
+	background: #0097b4;
+	border-color: #0097b4;
+	outline: none;
+}
+
+.text-content .filter_home_repair_result .form-field > p {
+	margin-bottom: 0 !important;
+}
+
+.filter_home_repair_result .form-field {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	margin-bottom: 27px;
+
+}
+.filter_home_repair_result .form-field label {
+	width: 20%;
+	font-family: Helvetica,Arial,sans-serif;
+	text-transform: none;
+	font-size: 22px;
+	font-weight: 400;
+	color: #473d34;
+}
+
+.filter_home_repair_result .form-field:first-child label {
+	width: 100%;
+}
+
+.filter_home_repair_result .form-field:first-child .form-field-input {
+	width: 100%;
+}
+
+.filter_home_repair_result .form-field .form-field-input {
+	width: 80%;
+}
+
+.filter_home_repair_result .form-field .form-field-input.form-field-input-text {
+	width: 25%;
+	padding-left: 5px;
+}
+.filter_home_repair_result p {
+	font-size: 12px !important;
+	margin: 5px 0 !important;
+	display: block !important;
+	line-height: 1.4 !important;
+}
+
+.form-field input::-webkit-input-placeholder,
+.form-field textarea::-webkit-input-placeholder { /* Edge */
+  color: #008099;
+ text-transform: none;
+ font-weight: 400;
+ font-size: 22px;
+}
+
+.form-field input:-ms-input-placeholder,
+.form-field textarea::-webkit-input-placeholder { /* Internet Explorer 10-11 */
+  color: #008099;
+  text-transform: none;
+   font-weight: 400;
+   font-size: 22px;
+}
+
+input[type=checkbox] {
+   visibility: hidden;}
+.form-field input::placeholder,
+.form-field textarea::-webkit-input-placeholder {
+  color: #008099;
+  text-transform: none;
+   font-weight: 400;
+   font-size: 22px;
+}
+
+
+
+.home_repair_program {
+	padding: 50px 0;
+}
+
+.home_repair_program .home_organization_name{
+	font-size: 16px;
+}
+
+.home_repair_program .home_program_name {
+	font-weight: 700;
+    font-size: 24px;
+    color: #218b9e;
+    display: block;
+    transition: 0.4s all;
+	padding: 10px 0;
+}
+.home_repair_program .home_description {
+	font-size: 15px;
+}
+.home_repair_program .home_program_state_zip {
+	text-transform: uppercase;
+    font-size: 15px;
+    margin: 20px 0;
+}
+
+.home_phone_no {
+	margin: 30px 0;
+}
+.home_phone_no span {
+	display: block;
+	margin-bottom: 20px;
+	font-weight: 700;
+}
+
+.home-wrap {
+	border-top: 1px solid #dedad6;
+	margin-top: 50px;
+}
+
+.round {
+  position: relative;
+}
+
+.round label {
+  background-color: #fff;
+  border: 1px solid #008099;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 28px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 28px;
+}
+
+.round label:after {
+  border: 2px solid #fff;
+  border-top: none;
+  border-right: none;
+  content: "";
+  height: 6px;
+  left: 6px;
+  opacity: 0;
+  position: absolute;
+  top: 7px;
+  transform: rotate(-45deg);
+  width: 12px;
+}
+
+.round input[type="checkbox"] {
+  visibility: hidden;
+}
+
+.round input[type="checkbox"]:checked + label {
+  background-color: #008099;
+  border-color: #008099;
+}
+
+.round input[type="checkbox"]:checked + label:after {
+  opacity: 1;
+}
+
+.form-field-input-checkbox {
+	display: flex;
+}
+
+.form-field-check{
+	width: 40px;
+}
+
+.form-field-input-checkbox label {
+	width: 25px !important;
+	height: 25px !important;
+}
+
+.form-field-input-checkbox span {
+	color: #473d34;
+	cursor: pointer;
+}
+
+.filter_home_repair_result .form-field:nth-child(4) label {
+	width: 100%;
+	margin-bottom: 10px;
+}
+
+.filter_home_repair_result .form-field:nth-child(4) .form-field-input {
+	width: 100%;
+}
+
+
+@media (max-width:667px) {
+	.filter_home_repair_result .form-field label {
+		width: 100%;
+	}
+	.filter_home_repair_result .form-field .form-field-input {
+		width: 100%;
+	}
+	.filter_home_repair_result .form-field .form-field-input.form-field-input-text {
+		width: 100%;
+	}
+}
+.test {
+	padding: 30px;
+}
+
+
+
+.filter_home_repair_result .s-hidden {
+    visibility:hidden;
+    padding-right:10px;
+}
+.filter_home_repair_result .select {
+    cursor:pointer;
+    display:inline-block;
+    position:relative;
+    padding: 0 15px;
+    width: 100%;
+    border: none!important;
+    border-radius: 0;
+    outline: none;
+    /*border-bottom: 2px solid #008099!important;*/
+    padding: 0;
+    font-size: 18px;
+    color: #008099;
+}
+.filter_home_repair_result .select:after {
+	content:"";
+	width:100%;
+	height:2px;
+	display: block;
+	position:absolute;
+	left:0;
+	bottom: 0;
+	background-color: #008099;
+}
+
+.filter_home_repair_result .styledSelect:after {
+	content: "";
+    width: 0;
+    height: 0;
+    border: 8px solid transparent;
+    border-color: #008099 transparent transparent transparent;
+    position: absolute;
+    top: 10px;
+    right: 7px;
+}
+.filter_home_repair_result .styledSelect:before {
+	content: "";
+    width: 0;
+    height: 0;
+    border: 7px solid transparent;
+    border-color: #fff transparent transparent transparent;
+    position: absolute;
+    top: 9px;
+    right: 8px;
+    z-index: 1;
+}
+
+.filter_home_repair_result .styledSelect {
+    position:absolute;
+    top:2px;
+    right:0;
+    bottom:0;
+    left:0;
+    background-color:white;
+    padding:0;
+    font-weight:400;
+	font-size: 22px;
+}
+
+.filter_home_repair_result .options {
+    display:none;
+    position:absolute;
+    top:100%;
+    right:0;
+    left:0;
+    z-index:999;
+    margin:0 0;
+    padding:0 0;
+    list-style:none;
+    border:1px solid #ccc;
+    background-color:white;
+}
+.filter_home_repair_result .options li {
+    padding:0 6px;
+    margin:0 0;
+    padding:20px 25px;
+	text-transform: lowercase;
+	font-size: 22px !important;
+}
+/* .filter_home_repair_result .options li:hover {
+    background-color:#39f;
+    color:white;
+} */
+
+/* accordion section start*/
+    .accordion-block{
+        padding: 20px 0;
+    }
+    .accordion-block .main-wrap{
+        padding: 20px 0;
+    }
+    .main-wrap h2{
+        font-size: 54px;
+        text-align: center;
+        margin-bottom: 20px;
+        color:#008099;
+        font-family: Georgia,Times,serif;
+        font-weight: 400;
+        font-style: normal;
+    }
+    .accordian-wrap h5{
+        font-weight: 600;
+        color: #008099;
+        font-size: 20px;
+        padding: 10px;
+        cursor: pointer;
+        pointer-events: all;
+        transition: 0.3s;
+        position: relative;
+        margin-bottom: 0;
+    }
+    .accordian-item {
+        /* box-shadow: 9px 0 30px rgb(0 128 153 / 50%); */
+        margin-bottom: 20px; 
+        border: 2px solid #008099;
+        border-radius: 3px;
+    }
+    .accordian-wrap h5:hover{
+        color: #473d34;
+    }
+    .accordian-wrap .accordian-item h5::after,
+    .accordian-wrap .accordian-item h5::before{
+        position: absolute;
+        content: '';
+        height: 3px;
+        width: 18px;
+        background-color: #008099;
+        top: 23px;
+        right: 15px;
+    }
+    .accordian-wrap .accordian-item h5::before{
+        transform: rotate(90deg);
+        transition: 0.3s;
+    }
+
+    .accordian-wrap .accordian-item.active h5::before{
+        display: none;
+    }
+    .accordian-wrap h5 .accordian-answer{
+        margin-top: 5px;
+    }
+    .accordian-answer{
+        display: none;
+        background-color: #fff;
+        padding: 10px;
+    }
+    
+    .accordian-answer p{
+        font-family:Helvetica,Arial,sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        font-style: normal;
+        padding-bottom:10px    ;
+        margin-bottom: 0;
+        line-height: 2.4rem;
+        text-transform: none;
+        letter-spacing: normal
+    }
+    /* Responsive-css */
+    @media (max-width:767px) {
+        .main-wrap h2{
+            font-size: 30px;
+        }
+        .accordian-wrap h5{
+            font-size: 18px;
+        }
+        .accordian-answer p{
+            font-size: 14px;
+        }
+    }
+/* accordion section End*/
+
+@media (max-width:1180px) {
+	.filter_home_repair_result .form-field label{width: 21%;}
+	.filter_home_repair_result .form-field .form-field-input{width: 79%;}
+}
+
+@media (max-width:668px) {
+	.filter_home_repair_result .form-field label{width: 100%;}
+	.filter_home_repair_result .form-field .form-field-input{width: 100%;}
+	.filter_home_repair_result .form-field .form-field-input.form-field-input-text{width: 100%;}
+}
+
+
+.wpcf7-form input, select, textarea {
+	border: 1px solid #473d34;
+	padding:7px;
+	width:100%;
+}
+
+.wpcf7-form label{
+	font-family: Helvetica,Arial,sans-serif;
+	width:100%;
+	text-transform:none;
+	font-size:16px;
+}
+
+.field {
+	margin-bottom:20px;
+}
+
+.wpcf7-form [type=submit] {
+	border: 2px solid #008099;
+    text-transform: uppercase;
+    padding: 12px 30px;
+    color: #fff;
+	background-color: #008099;
+	font-size: 1.4rem;
+	font-weight: 700;
+	width:auto;
+}
+
+.wpcf7-form [type=submit]:hover{
+	color: #fff;
+    background: #0097b4;
+    border-color: #0097b4;
+}
+
+.wpcf7-not-valid-tip {
+	font-size:16px;
+	text-transform:none;
+}
+
+.wpcf7 form .wpcf7-response-output {
+	font-size:16px;
+}

@@ -1,0 +1,36 @@
+// Define Bootstrap breakpoints.
+// Breakpoint mixins defined in _mixins.scss
+$xs: 430px;
+$bp-576: 576px; // sm
+$bp-768: 768px; // sm-md
+$bp-992: 992px; // md
+$bp-1200: 1200px; // l
+$xl: 1400px;
+$xxl: 1800px;
+
+// Image directory:
+// E.g. background-image: url('#{$img-path}icon.png');
+// or use the mixin: @include bgi('icon.png');
+$img-path: '../images/';
+
+// Colors (names: http://chir.ag/projects/name-that-color/)
+// Better yet: http://agencylabs-ntc.stg.ninja/?hex=C9E2E6
+$taupe: #473D34;
+$allports: #008099;
+$hint-of-red: #f5f3f2;
+$opal: #9EBDC2;
+$tuft-bush: #FFD5C5;
+$supernova: #FFC800;
+$black-squeeze: #EBF6F7;
+$westar: #DEDAD6;
+$sand-dune: #837466;
+$solitaire: #FEF5E2;
+$pippin: #FFE7DD;
+$alto: #D8D8D8;
+$burnt-sienna: #EA8D4E;
+$botticelli: #C9E2E6;
+$coconut-cream: #F8EED9;
+$btnHover: #0097B4;
+
+// typography
+$base-size: 62.5%;

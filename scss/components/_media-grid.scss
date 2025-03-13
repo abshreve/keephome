@@ -1,0 +1,22 @@
+.media-grid-component {
+  max-width: 450px;
+  margin: 0 auto;
+  padding: 11px;
+  @include bp(992px) {
+    max-width: none;
+    margin: 40px 0 30px;
+    padding: 0;
+  }
+  .img-container {
+    padding: 4px;
+    @include bp(992px) {
+      padding: 15px;
+    }
+  }
+  img {
+    max-height: 141px;
+    @include bp(992px) {
+      margin: 0 auto;
+    }
+  }
+}

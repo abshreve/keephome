@@ -1,0 +1,62 @@
+.content-page-hero {
+	&__inner {
+		position: relative;
+	}
+	&__image {
+		background-repeat: none;
+		background-size: cover;
+		height: 200px;
+		margin-bottom: 111px;
+		@include bp(468px) {
+			margin-bottom: 55px;
+		}
+		@include bp-992 {
+			margin-bottom: 111px;
+			height: 410px;
+		}
+	}
+
+	&__title {
+		padding: 15px 20px 0;
+		background-color: white;
+		position: relative;
+		width: 100%;
+		bottom: -94px;
+		@include bp(460px) {
+			bottom: -35px;
+		}
+		@include bp-992 {
+			width: 88%;
+			bottom: -29px;
+			max-width: 927px;
+			padding-top: 30px;
+		}
+
+		h1 {
+			font-size: 4.4rem;
+			line-height: 4.5rem;
+
+			@include bp-992 {
+				font-size: 5.4rem;
+				line-height: 5.5rem;
+			}
+		}
+	}
+
+	&__content {
+		padding: 0 20px;
+		max-width: 792px;
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: 33px;
+		@include bp-992 {
+			margin-bottom: 115px;
+		}
+	}
+
+	&__subtitle {
+		margin-bottom: 1rem;
+		font-family: Helvetica, Arial, sans-serif;
+    	font-weight: 600;
+	}
+}
