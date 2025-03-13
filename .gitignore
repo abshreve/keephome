@@ -6,4 +6,4 @@
 
 *.DS_Store
 
-/wp-content/themes/keephome/node_modules
+/node_modules
