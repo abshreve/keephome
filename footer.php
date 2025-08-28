@@ -1,5 +1,5 @@
 <?php
-$logo = get_field('logo', 'option') ? get_field('logo', 'option') : get_image('logo.png');
+$logo = get_field('logo', 'option') ? get_field('logo', 'option') : get_image('logo.svg');
 // Code to submit to HS the email from footer upon submission
 $hubspotutk = $_COOKIE['hubspotutk'];
 $ip_addr = $_SERVER['REMOTE_ADDR'];
@@ -59,176 +59,322 @@ $privacy_policy = get_field('privacy_policy_page_link',  'option');
 $contact = get_field('contact_us',  'option');
 $call = get_field('call_line',  'option');
 $footerType = get_field('header_footer_setting');
+$sign_in_link = get_field('sign-in_link', 'option');
+$sign_up_link = get_field('sign-up_link', 'option');
+$app_link = get_field('app_link', 'option');
+
+$footerDisplay = get_field('display_footer');
+if (!$footerDisplay) {
+  $footerDisplay = 'b2b';
+}
+$footerMenu = get_field('display_footer_menu');
+if (!$footerMenu) {
+  $footerMenu = 'show';
+}
+$footerBottom = get_field('display_footer_bottom');
+if (!$footerBottom) {
+  $footerBottom = 'show';
+}
+$footer_cta = get_field('footer_cta', get_the_ID());
 
 if ($footerType == 'minimal' || $footerType == 'ultra-minimal') : ?>
 
   <footer class="main-footer minimal">
     <div class="container">
+      <?php if($footerBottom == 'show') : ?>
         <div class="footer-meta__tools">
           <?= get_component('components', 'font-scaler') ?>
           <?= get_component('components', 'to-top') ?>
         </div>  
-        <div class="footer-meta">
-        <div class="footer-meta__info">
-          <div class="footer-meta__logo">
-            <img class="logo-img" src="<?= get_template_directory_uri() ?>/images/logo.svg" alt="footer logo"/>
-          </div>
-
-          <span class="footer-meta__copyright-terms small">&copy; <?= date("Y") ?> Framework. All rights reserved.<br>
-            <?php if (!empty($contact['url'])) : ?>
-              <a href="<?= $contact['url'] ?>" title="<?= $contact['title'] ?>" class="small"><?= $contact['title'] ?></a>
-            <?php endif; ?>
-            <?php if (!empty($terms_and_condtions['url'])) : ?>
-              <a href="<?= $terms_and_condtions['url'] ?>" title="<?= $terms_and_condtions['title'] ?>" class="small"><?= $terms_and_condtions['title'] ?></a>
-            <?php endif;
-              if (!empty($privacy_policy['url'])) : ?>
-              <a href="<?= $privacy_policy['url'] ?>" title="<?= $privacy_policy['title'] ?>" class="small"><?= $privacy_policy['title'] ?></a>
-            <?php endif; ?>
-            <?php if (!empty($call)) : ?>
-              <br><?= $call ?>
-            <?php endif; ?>
-          </span>
-        </div>
-      </div>
       
+        <div class="footer-meta">
+          <div class="footer-meta__info">
+            <div class="footer-meta__logo">
+              <img class="logo-img" src="<?= get_template_directory_uri() ?>/images/logo.svg" alt="footer logo"/>
+            </div>
+
+            <span class="footer-meta__copyright-terms small">&copy; <?= date("Y") ?> Framework. All rights reserved.<br>
+              <?php if (!empty($contact['url'])) : ?>
+                <a href="<?= $contact['url'] ?>" title="<?= $contact['title'] ?>" class="small"><?= $contact['title'] ?></a>
+              <?php endif; ?>
+              <?php if (!empty($terms_and_condtions['url'])) : ?>
+                <a href="<?= $terms_and_condtions['url'] ?>" title="<?= $terms_and_condtions['title'] ?>" class="small"><?= $terms_and_condtions['title'] ?></a>
+              <?php endif;
+                if (!empty($privacy_policy['url'])) : ?>
+                <a href="<?= $privacy_policy['url'] ?>" title="<?= $privacy_policy['title'] ?>" class="small"><?= $privacy_policy['title'] ?></a>
+              <?php endif; ?>
+              <?php if (!empty($call)) : ?>
+                <br><?= $call ?>
+              <?php endif; ?>
+            </span>
+          </div>
+        <?php endif; ?>  
+      </div>
     </div>
   </footer>
 
 <?php else : ?>
 
   <footer class="main-footer">
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-content__col">
-          <h4><?= the_field('download_title',  'option'); ?></h4>
-          <p><?= the_field('download-description',  'option'); ?></p>
-          <?php $downloadLabel = get_field( "download_label", 'option' ); 
-          $downloadLabelLink = get_field( "download_label_link",'option' ); 
-          if( $downloadLabel && $downloadLabelLink ) {  ?>
-          <div class="footer-content__buttons">
-            <a href="<?php echo $downloadLabelLink; ?>" target="_blank" class="button btn--blue download-btn"> <?php echo $downloadLabel; ?></a>
+    <?php if ($footerDisplay == 'b2b') : ?>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-content__col">
+            <h4><?= the_field('download_title',  'option'); ?></h4>
+            <p><?= the_field('download-description',  'option'); ?></p>
+            <?php $downloadLabel = get_field( "download_label", 'option' ); 
+            $downloadLabelLink = get_field( "download_label_link",'option' ); 
+            if( $downloadLabel && $downloadLabelLink ) {  ?>
+            <div class="footer-content__buttons">
+              <a href="<?php echo $downloadLabelLink; ?>" target="_blank" class="button btn--blue download-btn"> <?php echo $downloadLabel; ?></a>
+            </div>
+            <?php } ?> 
           </div>
-          <?php } ?> 
-        </div>
-        <div id="footer-form" class="footer-content__col">
-          <h4><?= the_field('keepup-title',  'option'); ?></h4>
-          <p><?= the_field('keepup-description',  'option'); ?></p><?php
-
-          if (isset($_GET['thanks'])) { ?>
-            <span class="footer-form__thanks">Thank you for signing up</span><?php
-          } else { ?>
-           <?php /* <form action="<?php echo $_SERVER['PHP_SELF']; ?>" class="footer-content__form needs-validation" method="POST" novalidate>
-              <!-- Sets "Keep" checkbox to TRUE -->
-              <input id="00N0V000008oRYf" name="00N0V000008oRYf" type="hidden" value="1" />
-
-              <!-- Sets "Keep Newsletter" checkbox to TRUE --><input id="00N0V000009Uvxb" name="00N0V000009Uvxb" type="hidden" value="1" />
-              <input type=hidden name="oid" value="00Dd0000000g7HX">
-
-              <!-- EDIT TO DESIRED RETURN URL -->
-              <!-- <input type=hidden name="retURL" value="<https://www.keephome.com"> -->
-              <input type=hidden name="retURL" value="<?= get_current_url() ?>?thanks=true">
-
-              <!-- CHECKS THE "KEEP" BOX IN SALESFORCE -->
-              <!-- <input id="00N0V000008oRYf" name="00N0V000008oRYf" type="checkbox" type="hidden" value="1" hidden checked /> -->
-
-              <!-- hard-coding this one in -->
-              <input type="hidden" value="Footer" id="00N0V000009V0AG" maxlength="255" name="00N0V000009V0AG" />
-
-              <!-- SETS RECORD TYPE TO "CUSTOMER" -->
-              <input type=hidden name="recordType" id="recordType" value="012d0000001clV1">
-
-              <!-- USER FIELDS. XVERIFY_EMAIL CLASS NEEDED IN EMAIL FOR XVERIFY -->
-              <!-- <input aria-label="Enter your email to join the newsletter" placeholder="Enter Email" id="email" class="xverify_email" required maxlength="80" name="email" size="20" type="text" /> -->
-              <div class="input--email">
-                <label class="footer-form__label" for="email">Email</label>
-                <input aria-label="email" class="footer-form__input xverify_email" placeholder="Email" id="email" required maxlength="80" name="email" size="20" type="text" />
-                <div class="invalid-feedback">
-                  Email is required
+          <div id="footer-form" class="footer-content__col">
+            <h4><?= the_field('keepup-title',  'option'); ?></h4>
+            <p><?= the_field('keepup-description',  'option'); ?></p><?php
+      
+            if (isset($_GET['thanks'])) { ?>
+              <span class="footer-form__thanks">Thank you for signing up</span><?php
+            } else { ?>
+              <?php /* <form action="<?php echo $_SERVER['PHP_SELF']; ?>" class="footer-content__form needs-validation" method="POST" novalidate>
+                <!-- Sets "Keep" checkbox to TRUE -->
+                <input id="00N0V000008oRYf" name="00N0V000008oRYf" type="hidden" value="1" />
+      
+                <!-- Sets "Keep Newsletter" checkbox to TRUE --><input id="00N0V000009Uvxb" name="00N0V000009Uvxb" type="hidden" value="1" />
+                <input type=hidden name="oid" value="00Dd0000000g7HX">
+      
+                <!-- EDIT TO DESIRED RETURN URL -->
+                <!-- <input type=hidden name="retURL" value="<https://www.keephome.com"> -->
+                <input type=hidden name="retURL" value="<?= get_current_url() ?>?thanks=true">
+      
+                <!-- CHECKS THE "KEEP" BOX IN SALESFORCE -->
+                <!-- <input id="00N0V000008oRYf" name="00N0V000008oRYf" type="checkbox" type="hidden" value="1" hidden checked /> -->
+      
+                <!-- hard-coding this one in -->
+                <input type="hidden" value="Footer" id="00N0V000009V0AG" maxlength="255" name="00N0V000009V0AG" />
+      
+                <!-- SETS RECORD TYPE TO "CUSTOMER" -->
+                <input type=hidden name="recordType" id="recordType" value="012d0000001clV1">
+      
+                <!-- USER FIELDS. XVERIFY_EMAIL CLASS NEEDED IN EMAIL FOR XVERIFY -->
+                <!-- <input aria-label="Enter your email to join the newsletter" placeholder="Enter Email" id="email" class="xverify_email" required maxlength="80" name="email" size="20" type="text" /> -->
+                <div class="input--email">
+                  <label class="footer-form__label" for="email">Email</label>
+                  <input aria-label="email" class="footer-form__input xverify_email" placeholder="Email" id="email" required maxlength="80" name="email" size="20" type="text" />
+                  <div class="invalid-feedback">
+                    Email is required
+                  </div>
                 </div>
-              </div>
-
-              <button type="submit" class="input-btn" title="submit"><?= get_component('components', 'svg',['icon' => 'angle-right', 'title' => '', 'height' => 18, 'width' => 15, 'viewbox' => '0 0 15 18']) ?></button>
-            <form> */ ?>
-<script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
-<script>
- hbspt.forms.create({
-  region: "na1",
-  portalId: "6852018",
-  formId: "d81c3889-963e-45a7-9b8e-0d4ce33774ff"
- });
-</script>
+      
+                <button type="submit" class="input-btn" title="submit"><?= get_component('components', 'svg',['icon' => 'angle-right', 'title' => '', 'height' => 18, 'width' => 15, 'viewbox' => '0 0 15 18']) ?></button>
+              <form> */ ?>
+              <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
+              <script>
+               hbspt.forms.create({
+                region: "na1",
+                portalId: "6852018",
+                formId: "d81c3889-963e-45a7-9b8e-0d4ce33774ff"
+               });
+              </script>
               <?php
             }?>
-        </div>
-
-        <div class="footer-content__col">
-          <h4><?= the_field('follow-title', 'option'); ?></h4>
-          <p><?= the_field('follow-description', 'option'); ?></p>
-          <div class="footer__social-links">
-             <?php /* <a href="<?= get_field('facebook-link', 'option')?>" target="_blank" title="social link to linkedin" class="footer__social-link">
-              <svg width="35px" height="35px" viewBox="0 0 552.77 552.77">
-                    <circle id="Oval" stroke="currentColor" stroke-width="2" cx="17.5" cy="17.5" r="16.5"></circle> 
-                    <g id="SVGRepo_iconCarrier"> <g> <g> <path d="M17.95,528.854h71.861c9.914,0,17.95-8.037,17.95-17.951V196.8c0-9.915-8.036-17.95-17.95-17.95H17.95 C8.035,178.85,0,186.885,0,196.8v314.103C0,520.816,8.035,528.854,17.95,528.854z"></path> <path d="M17.95,123.629h71.861c9.914,0,17.95-8.036,17.95-17.95V41.866c0-9.914-8.036-17.95-17.95-17.95H17.95 C8.035,23.916,0,31.952,0,41.866v63.813C0,115.593,8.035,123.629,17.95,123.629z"></path> <path d="M525.732,215.282c-10.098-13.292-24.988-24.223-44.676-32.791c-19.688-8.562-41.42-12.846-65.197-12.846 c-48.268,0-89.168,18.421-122.699,55.27c-6.672,7.332-11.523,5.729-11.523-4.186V196.8c0-9.915-8.037-17.95-17.951-17.95h-64.192 c-9.915,0-17.95,8.035-17.95,17.95v314.103c0,9.914,8.036,17.951,17.95,17.951h71.861c9.915,0,17.95-8.037,17.95-17.951V401.666 c0-45.508,2.748-76.701,8.244-93.574c5.494-16.873,15.66-30.422,30.488-40.649c14.83-10.227,31.574-15.343,50.24-15.343 c14.572,0,27.037,3.58,37.393,10.741c10.355,7.16,17.834,17.19,22.436,30.104c4.604,12.912,6.904,41.354,6.904,85.33v132.627 c0,9.914,8.035,17.951,17.949,17.951h71.861c9.914,0,17.949-8.037,17.949-17.951V333.02c0-31.445-1.982-55.607-5.941-72.48 S535.836,228.581,525.732,215.282z"></path> </g> </g> </g></svg>
-                <?= get_component('components', 'svg',['icon' => 'facebook', 'classes' => '', 'title' => 'go to our linkedin']) ?> 
-             </a>*/ ?>
-             <link rel='stylesheet' id='framework-bootstrap-style-css' href='https://frameworkhomeownership.org/wp-content/themes/keephome/css/bootstrap.css' type='text/css' media='all' />
-            <style type="text/css">
-               .keep-in-touch{ text-align:right; }
-               .keep-in-touch ul{ margin:32px 0 0 0; padding: 0; list-style:none; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: end; -ms-flex-pack: end; justify-content: flex-start; position: relative; z-index: 2;}
-               .keep-in-touch ul li{ display:inline-block; margin:0 0 0 8px; }
-               .keep-in-touch ul li a{ width: 35px; height: 35px; display: flex; align-items: center; justify-content: center; background-color:#008099; color:#FFFFFF; border-radius: 50%;}
-               .keep-in-touch ul li a:hover{ background-color: #0097b4; color:#FFFFFF;}
-               .keep-in-touch ul li a .fa-twitter:before{ content: ""; background: url(<?= get_template_directory_uri() ?>/images/x-twitter.svg) no-repeat center center; background-size: 18px auto; width: 18px; height: 18px; display: block; }
-            </style>
-            <div class="keep-in-touch">
+          </div>
+      
+          <div class="footer-content__col">
+            <h4><?= the_field('follow-title', 'option'); ?></h4>
+            <p><?= the_field('follow-description', 'option'); ?></p>
+            <div class="footer__social-links">
+              <?php /* <a href="<?= get_field('facebook-link', 'option')?>" target="_blank" title="social link to linkedin" class="footer__social-link">
+                <svg width="35px" height="35px" viewBox="0 0 552.77 552.77">
+                      <circle id="Oval" stroke="currentColor" stroke-width="2" cx="17.5" cy="17.5" r="16.5"></circle> 
+                      <g id="SVGRepo_iconCarrier"> <g> <g> <path d="M17.95,528.854h71.861c9.914,0,17.95-8.037,17.95-17.951V196.8c0-9.915-8.036-17.95-17.95-17.95H17.95 C8.035,178.85,0,186.885,0,196.8v314.103C0,520.816,8.035,528.854,17.95,528.854z"></path> <path d="M17.95,123.629h71.861c9.914,0,17.95-8.036,17.95-17.95V41.866c0-9.914-8.036-17.95-17.95-17.95H17.95 C8.035,23.916,0,31.952,0,41.866v63.813C0,115.593,8.035,123.629,17.95,123.629z"></path> <path d="M525.732,215.282c-10.098-13.292-24.988-24.223-44.676-32.791c-19.688-8.562-41.42-12.846-65.197-12.846 c-48.268,0-89.168,18.421-122.699,55.27c-6.672,7.332-11.523,5.729-11.523-4.186V196.8c0-9.915-8.037-17.95-17.951-17.95h-64.192 c-9.915,0-17.95,8.035-17.95,17.95v314.103c0,9.914,8.036,17.951,17.95,17.951h71.861c9.915,0,17.95-8.037,17.95-17.951V401.666 c0-45.508,2.748-76.701,8.244-93.574c5.494-16.873,15.66-30.422,30.488-40.649c14.83-10.227,31.574-15.343,50.24-15.343 c14.572,0,27.037,3.58,37.393,10.741c10.355,7.16,17.834,17.19,22.436,30.104c4.604,12.912,6.904,41.354,6.904,85.33v132.627 c0,9.914,8.035,17.951,17.949,17.951h71.861c9.914,0,17.949-8.037,17.949-17.951V333.02c0-31.445-1.982-55.607-5.941-72.48 S535.836,228.581,525.732,215.282z"></path> </g> </g> </g></svg>
+                  <?= get_component('components', 'svg',['icon' => 'facebook', 'classes' => '', 'title' => 'go to our linkedin']) ?> 
+              </a>*/ ?>
+              <link rel='stylesheet' id='framework-bootstrap-style-css' href='https://frameworkhomeownership.org/wp-content/themes/keephome/css/bootstrap.css' type='text/css' media='all' />
+              <style type="text/css">
+                 .keep-in-touch{ text-align:right; }
+                 .keep-in-touch ul{ margin:32px 0 0 0; padding: 0; list-style:none; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: end; -ms-flex-pack: end; justify-content: flex-start; position: relative; z-index: 2;}
+                 .keep-in-touch ul li{ display:inline-block; margin:0 0 0 8px; }
+                 .keep-in-touch ul li a{ width: 35px; height: 35px; display: flex; align-items: center; justify-content: center; background-color:#008099; color:#FFFFFF; border-radius: 50%;}
+                 .keep-in-touch ul li a:hover{ background-color: #0097b4; color:#FFFFFF;}
+                 .keep-in-touch ul li a .fa-twitter:before{ content: ""; background: url(<?= get_template_directory_uri() ?>/images/x-twitter.svg) no-repeat center center; background-size: 18px auto; width: 18px; height: 18px; display: block; }
+              </style>
+              <div class="keep-in-touch">
                 <ul>
-                    <?php if(get_field('facebook-link', 'option' )) { ?>
-                    <li><a href="<?php echo get_field('facebook-link', 'option' ); ?>" target="_blank"><i class="fa fa-facebook"></i></a></li>
-                    <?php }  if(get_field('twitter_link', 'option' )) { ?> 
-                    <li><a href="<?php echo get_field('twitter_link', 'option' ); ?>"  target="_blank"><i class="fa fa-twitter"></i></a></li>
-                    <?php }  if(get_field('linkedin_link', 'option' )) { ?> 
-                    <li><a href="<?php echo get_field('linkedin_link', 'option' ); ?>"  target="_blank"><i class="fa fa-linkedin"></i></a></li>
-                    <?php }  if(get_field('instagram-link', 'option' )) { ?> 
-                    <li><a href="<?php echo get_field('instagram-link', 'option' ); ?>"  target="_blank"><i class="fa fa-instagram"></i></a></li>
-                    <?php } ?> 
+                  <?php if(get_field('facebook-link', 'option' )) { ?>
+                  <li><a href="<?php echo get_field('facebook-link', 'option' ); ?>" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                  <?php }  if(get_field('twitter_link', 'option' )) { ?> 
+                  <li><a href="<?php echo get_field('twitter_link', 'option' ); ?>"  target="_blank"><i class="fa fa-twitter"></i></a></li>
+                  <?php }  if(get_field('linkedin_link', 'option' )) { ?> 
+                  <li><a href="<?php echo get_field('linkedin_link', 'option' ); ?>"  target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                  <?php }  if(get_field('instagram-link', 'option' )) { ?> 
+                  <li><a href="<?php echo get_field('instagram-link', 'option' ); ?>"  target="_blank"><i class="fa fa-instagram"></i></a></li>
+                  <?php } ?> 
                 </ul>
+              </div>
             </div>
           </div>
-          
         </div>
-      </div>
-
-      <div class="footer-meta">
-
-        <div class="footer-meta__info">
-          <div class="footer-meta__logo">
-            <?= get_component('components', 'image', [
-              'image' => $logo,
-              'classes' => 'logo-img',
-              'alt' => 'footer logo',
-              'default_size' => 'small',
-              'srcset_sizes' => '130px'
-            ]) ?>
+      </div> 
+    <?php elseif ($footerDisplay == 'consumer') : ?>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-content__col">
+            <h4><?= the_field('download_title_2',  'option'); ?></h4>
+            <p><?= the_field('download-description_2',  'option'); ?></p>
+            <?php $downloadLabel = get_field( "download_label_2", 'option' ); 
+            $downloadLabelLink = get_field( "download_label_link_2",'option' ); 
+            if( $downloadLabel && $downloadLabelLink ) {  ?>
+            <div class="footer-content__buttons">
+              <a href="<?php echo $downloadLabelLink; ?>" target="_blank" class="button btn--blue download-btn"> <?php echo $downloadLabel; ?></a>
+            </div>
+            <?php } ?> 
           </div>
-
-          <span class="footer-meta__copyright-terms small">&copy; <?= date("Y") ?> Framework. All rights reserved.<br>
-            68 Harrison Ave., Ste. 605, PMB 49146, Boston, MA 02111<br>
-            <?php if (!empty($terms_and_condtions['url'])) : ?>
-              <a href="<?= $terms_and_condtions['url'] ?>" title="<?= $terms_and_condtions['title'] ?>" class="small"><?= $terms_and_condtions['title'] ?></a>
-            <?php endif;
-              if (!empty($privacy_policy['url'])) : ?>
-              <a href="<?= $privacy_policy['url'] ?>" title="<?= $privacy_policy['title'] ?>" class="small"><?= $privacy_policy['title'] ?></a>
-            <?php endif; ?>
-          </span>
+          <div id="footer-form" class="footer-content__col">
+            <h4><?= the_field('keepup-title_2',  'option'); ?></h4>
+            <p><?= the_field('keepup-description_2',  'option'); ?></p><?php
+  
+            if (isset($_GET['thanks'])) { ?>
+              <span class="footer-form__thanks">Thank you for signing up</span><?php
+            } else { ?>
+              <?php /* <form action="<?php echo $_SERVER['PHP_SELF']; ?>" class="footer-content__form needs-validation" method="POST" novalidate>
+                <!-- Sets "Keep" checkbox to TRUE -->
+                <input id="00N0V000008oRYf" name="00N0V000008oRYf" type="hidden" value="1" />
+  
+                <!-- Sets "Keep Newsletter" checkbox to TRUE --><input id="00N0V000009Uvxb" name="00N0V000009Uvxb" type="hidden" value="1" />
+                <input type=hidden name="oid" value="00Dd0000000g7HX">
+  
+                <!-- EDIT TO DESIRED RETURN URL -->
+                <!-- <input type=hidden name="retURL" value="<https://www.keephome.com"> -->
+                <input type=hidden name="retURL" value="<?= get_current_url() ?>?thanks=true">
+  
+                <!-- CHECKS THE "KEEP" BOX IN SALESFORCE -->
+                <!-- <input id="00N0V000008oRYf" name="00N0V000008oRYf" type="checkbox" type="hidden" value="1" hidden checked /> -->
+  
+                <!-- hard-coding this one in -->
+                <input type="hidden" value="Footer" id="00N0V000009V0AG" maxlength="255" name="00N0V000009V0AG" />
+  
+                <!-- SETS RECORD TYPE TO "CUSTOMER" -->
+                <input type=hidden name="recordType" id="recordType" value="012d0000001clV1">
+  
+                <!-- USER FIELDS. XVERIFY_EMAIL CLASS NEEDED IN EMAIL FOR XVERIFY -->
+                <!-- <input aria-label="Enter your email to join the newsletter" placeholder="Enter Email" id="email" class="xverify_email" required maxlength="80" name="email" size="20" type="text" /> -->
+                <div class="input--email">
+                  <label class="footer-form__label" for="email">Email</label>
+                  <input aria-label="email" class="footer-form__input xverify_email" placeholder="Email" id="email" required maxlength="80" name="email" size="20" type="text" />
+                  <div class="invalid-feedback">
+                    Email is required
+                  </div>
+                </div>
+  
+                <button type="submit" class="input-btn" title="submit"><?= get_component('components', 'svg',['icon' => 'angle-right', 'title' => '', 'height' => 18, 'width' => 15, 'viewbox' => '0 0 15 18']) ?></button>
+              <form> */ ?>
+              <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
+              <script>
+               hbspt.forms.create({
+                region: "na1",
+                portalId: "6852018",
+                formId: "d81c3889-963e-45a7-9b8e-0d4ce33774ff"
+               });
+              </script>
+              <?php
+            }?>
+          </div>
+  
+          <div class="footer-content__col">
+            <h4><?= the_field('follow-title_2', 'option'); ?></h4>
+            <p><?= the_field('follow-description_2', 'option'); ?></p>
+            <div class="footer__social-links">
+              <?php /* <a href="<?= get_field('facebook-link_2', 'option')?>" target="_blank" title="social link to linkedin" class="footer__social-link">
+                <svg width="35px" height="35px" viewBox="0 0 552.77 552.77">
+                      <circle id="Oval" stroke="currentColor" stroke-width="2" cx="17.5" cy="17.5" r="16.5"></circle> 
+                      <g id="SVGRepo_iconCarrier"> <g> <g> <path d="M17.95,528.854h71.861c9.914,0,17.95-8.037,17.95-17.951V196.8c0-9.915-8.036-17.95-17.95-17.95H17.95 C8.035,178.85,0,186.885,0,196.8v314.103C0,520.816,8.035,528.854,17.95,528.854z"></path> <path d="M17.95,123.629h71.861c9.914,0,17.95-8.036,17.95-17.95V41.866c0-9.914-8.036-17.95-17.95-17.95H17.95 C8.035,23.916,0,31.952,0,41.866v63.813C0,115.593,8.035,123.629,17.95,123.629z"></path> <path d="M525.732,215.282c-10.098-13.292-24.988-24.223-44.676-32.791c-19.688-8.562-41.42-12.846-65.197-12.846 c-48.268,0-89.168,18.421-122.699,55.27c-6.672,7.332-11.523,5.729-11.523-4.186V196.8c0-9.915-8.037-17.95-17.951-17.95h-64.192 c-9.915,0-17.95,8.035-17.95,17.95v314.103c0,9.914,8.036,17.951,17.95,17.951h71.861c9.915,0,17.95-8.037,17.95-17.951V401.666 c0-45.508,2.748-76.701,8.244-93.574c5.494-16.873,15.66-30.422,30.488-40.649c14.83-10.227,31.574-15.343,50.24-15.343 c14.572,0,27.037,3.58,37.393,10.741c10.355,7.16,17.834,17.19,22.436,30.104c4.604,12.912,6.904,41.354,6.904,85.33v132.627 c0,9.914,8.035,17.951,17.949,17.951h71.861c9.914,0,17.949-8.037,17.949-17.951V333.02c0-31.445-1.982-55.607-5.941-72.48 S535.836,228.581,525.732,215.282z"></path> </g> </g> </g></svg>
+                  <?= get_component('components', 'svg',['icon' => 'facebook', 'classes' => '', 'title' => 'go to our linkedin']) ?> 
+              </a>*/ ?>
+              <link rel='stylesheet' id='framework-bootstrap-style-css' href='https://frameworkhomeownership.org/wp-content/themes/keephome/css/bootstrap.css' type='text/css' media='all' />
+              <style type="text/css">
+                 .keep-in-touch{ text-align:right; }
+                 .keep-in-touch ul{ margin:32px 0 0 0; padding: 0; list-style:none; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: end; -ms-flex-pack: end; justify-content: flex-start; position: relative; z-index: 2;}
+                 .keep-in-touch ul li{ display:inline-block; margin:0 0 0 8px; }
+                 .keep-in-touch ul li a{ width: 35px; height: 35px; display: flex; align-items: center; justify-content: center; background-color:#008099; color:#FFFFFF; border-radius: 50%;}
+                 .keep-in-touch ul li a:hover{ background-color: #0097b4; color:#FFFFFF;}
+                 .keep-in-touch ul li a .fa-twitter:before{ content: ""; background: url(<?= get_template_directory_uri() ?>/images/x-twitter.svg) no-repeat center center; background-size: 18px auto; width: 18px; height: 18px; display: block; }
+              </style>
+              <div class="keep-in-touch">
+                <ul>
+                  <?php if(get_field('facebook-link_2', 'option' )) { ?>
+                  <li><a href="<?php echo get_field('facebook-link_2', 'option' ); ?>" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                  <?php }  if(get_field('twitter_link_2', 'option' )) { ?> 
+                  <li><a href="<?php echo get_field('twitter_link_2', 'option' ); ?>"  target="_blank"><i class="fa fa-twitter"></i></a></li>
+                  <?php }  if(get_field('linkedin_link_2', 'option' )) { ?> 
+                  <li><a href="<?php echo get_field('linkedin_link_2', 'option' ); ?>"  target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                  <?php }  if(get_field('instagram-link_2', 'option' )) { ?> 
+                  <li><a href="<?php echo get_field('instagram-link_2', 'option' ); ?>"  target="_blank"><i class="fa fa-instagram"></i></a></li>
+                  <?php } ?> 
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>  
+    <?php endif; ?>
 
-        <div class="footer-meta__tools">
-          <?= get_component('components', 'font-scaler') ?>
-          <?= get_component('components', 'to-top') ?>
+    <?php if($footerMenu == 'show') : ?>
+      <div class="footer-menu">
+        <div class="container">
+          <div class="footer-menu_inner">
+            <img class="footer-logo" src="/wp-content/uploads/2025/03/foot-logo.svg">
+            <?php echo get_component('components', 'footer-nav'); ?>
+            <div class="footer__sign-in">
+              <?php if( get_field('get_the_app_link', get_the_ID()) ) {
+                  echo (!empty($app_link)) ? '<a href="'.$app_link['url'].'" title="'.$app_link['title'].'" class="button btn--blue">'.$app_link['title'].'</a>' : null;
+                } else {
+                  echo (!empty($sign_in_link)) ? '<a href="'.$sign_in_link['url'].'" title="'.$sign_in_link['title'].'" class="button btn--light">'.$sign_in_link['title'].'</a>' : null;
+                  echo (!empty($sign_up_link)) ? '<a href="'.$sign_up_link['url'].'" title="'.$sign_up_link['title'].'" class="button btn--blue">'.$sign_up_link['title'].'</a>' : null;
+                }
+                echo (!empty($footer_cta)) ? '<a href="'.$footer_cta['url'].'" title="'.$footer_cta['title'].'" class="button btn--blue">'.$footer_cta['title'].'</a>' : '<a href="https://support.frameworkhomeownership.org/hc/en-us/requests/new" class="button btn--blue">Contact Sales</a>'; ?>
+            </div>
+          </div>  
         </div>
-
       </div>
-    </div>
+    <?php endif; ?>
+       
+    <?php if($footerBottom == 'show') : ?>
+      <div class="container">
+        <div class="footer-meta">
+  
+          <div class="footer-meta__info">
+            <div class="footer-meta__logo">
+              <?= get_component('components', 'image', [
+                'image' => $logo,
+                'classes' => 'logo-img',
+                'alt' => 'footer logo',
+                'default_size' => 'small',
+                'srcset_sizes' => '130px'
+              ]) ?>
+            </div>
+  
+            <span class="footer-meta__copyright-terms small">&copy; <?= date("Y") ?> Framework. All rights reserved.<br>
+              68 Harrison Ave., Ste. 605, PMB 49146, Boston, MA 02111<br>
+              <?php if (!empty($terms_and_condtions['url'])) : ?>
+                <a href="<?= $terms_and_condtions['url'] ?>" title="<?= $terms_and_condtions['title'] ?>" class="small"><?= $terms_and_condtions['title'] ?></a>
+              <?php endif;
+                if (!empty($privacy_policy['url'])) : ?>
+                <a href="<?= $privacy_policy['url'] ?>" title="<?= $privacy_policy['title'] ?>" class="small"><?= $privacy_policy['title'] ?></a>
+              <?php endif; ?>
+            </span>
+          </div>
+  
+          <div class="footer-meta__tools">
+            <?= get_component('components', 'font-scaler') ?>
+            <?= get_component('components', 'to-top') ?>
+          </div>
+  
+        </div>
+      </div>  
+    <?php endif; ?>
+
   </footer><?php
 
 endif;

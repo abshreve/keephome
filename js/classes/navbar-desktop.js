@@ -1,3 +1,5 @@
+/**** Replaced by Flyout Menu ****
+
 import ParentClass from './Parent.js'
 import Tweezer from 'tweezer.js'
 import { getWidth, toArray } from '../lib/utils.js'
@@ -103,3 +105,4 @@ class NavDesktop extends ParentClass {
 export default function (el) {
   new NavDesktop(el)
 }
+*/

@@ -56,7 +56,49 @@ class Desktop_Nav extends Walker_Nav_Menu{
     $item_output .= $args->after;
     
 		$output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
+		
+		global $menuTitle;
+		$menuTitle = $item->title;
+		
+		/*if (get_field('submenu_cta', $item->ID)) {
+			$link = get_field('submenu_cta', $item->ID);
+			$link_url = $link['url'];
+			$link_title = $link['title'];
+			$link_target = $link['target'] ? $link['target'] : '_self';
+				
+			global $menuCta;
+			$menuCta = '<a href="'.$link_url.'" class="button btn--blue" target="'.$link_target.'">'.	$link_title.'</a>';
+		}*/
+		
+		if($depth === 1) {
+			if (get_field('show_flyout', $item->ID)) {
+				$output .= "<div class=\"flyout\">";
+				$rows = get_field('flyout_content', $item->ID);
+				if( $rows ) {
+					foreach( $rows as $row ) {
+						$link = $row['flyout_content_link'];
+						$title = $row['flyout_content_title'];
+						if( $link ) {
+							$output .= '<a href='.$link.' class="flyout_title">'.$title.'</a>';
+						} elseif ( $title ) {
+							$output .= '<div class="flyout_title">'.$title.'</div>';
+						}
+						$content = $row['flyout_content_content'];
+						if ($content) { 
+							$output .= '<div class="flyout_content">'.$content.'</div>';
+						}
+						$image = $row['flyout_content_image'];
+						if ($image) { 
+							$output .= wp_get_attachment_image( $image, 'large', '', ['class' => 'flyout_image']);
+						}
+					}
+				}
+				$output .= '</div>';
+			}
+		}
   }
+	
+	
   
   /**
 	 * Starts the list before the elements are added.
@@ -86,8 +128,11 @@ class Desktop_Nav extends Walker_Nav_Menu{
 		 */
 		$class_names = join( ' ', apply_filters( 'nav_menu_submenu_css_class', $classes, $args, $depth ) );
 		$class_names = $class_names ? ' class="' . esc_attr( $class_names ) . '"' : '';
-
-		$output .= "<div class=\"nav-desktop__ul-wrap\"><ul$class_names>";
+		
+		$output .= '<div'.$class_names.'><ul class="nav-desktop__ul_inner">';
+		
+		global $menuTitle;
+		$output .= '<h4>'.$menuTitle.'</h4>';
   }
 
   /**
@@ -102,6 +147,10 @@ class Desktop_Nav extends Walker_Nav_Menu{
 	 * @param stdClass $args   An object of wp_nav_menu() arguments.
 	 */
 	public function end_lvl( &$output, $depth = 0, $args = array() ) {
+		//global $menuCta;
+		//$output .= $menuCta;
+		$output .= '<a href="https://support.frameworkhomeownership.org/hc/en-us/requests/new" class="button btn--blue" target="_self">Contact Sales</a>';
 		$output .= '</ul></div>';
 	}
+	
 } ?>

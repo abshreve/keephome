@@ -200,6 +200,123 @@ footer.main-footer {
       }
     }
   }
+  
+  .footer-menu {
+    background: #286072;
+    padding: 32px 0;
+    
+    @media (min-width: $bp-576) {
+      padding: 80px 0 160px;
+    }
+    
+    .container {
+      max-width: 1300px !important;
+    }
+    
+    .footer-menu_inner {
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      gap: 16px;
+      
+      @media (min-width: $bp-768) {
+        justify-content: center;
+      }
+      
+      @media (min-width: $bp-1200) {
+        justify-content: space-between;
+      }
+      
+      .footer-logo {
+        display: none;
+        
+        @media (min-width: $bp-992) {
+          display: block;
+          max-width: 108px;
+        }
+      }
+      
+      .footer-nav {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        padding-inline-start: 0;
+        margin: 0;
+        
+        @media (min-width: $bp-768) {
+          flex-direction: row;
+          gap: 24px;
+        }
+        
+        .menu-item {
+          flex: 1 0 auto;
+          list-style: none;
+          @include set-text(#fff, 1.8rem, 1, sans-bold, uppercase);
+          width: 100%;
+          
+          @media (min-width: $bp-768) {
+            width: 159px;
+          }
+          
+          a {
+            color: #fff;
+            display: block;
+            margin-bottom: 24px;
+            transition: color .2s linear;
+            
+            @media (min-width: $bp-768) {
+              margin-bottom: 40px;
+            }
+            
+            &:hover {
+              color: $botticelli;
+            }
+          }
+          
+          .sub-menu {
+            padding-inline-start: 0;
+            
+            .menu-item {
+              @include set-text(#fff, 1.8rem, 1, sans-500, capitalize);
+              
+              a {
+                margin-bottom: 16px;
+              }
+            }
+          }
+
+        }
+      }
+      
+      .footer__sign-in {
+        display: flex;
+        align-items: flex-end;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        gap: 16px;
+        
+        @media (min-width: $bp-768) {
+          flex-direction: row;
+        }
+        
+        @media (min-width: $bp-1200) {
+          flex-direction: column;
+          gap: 40px;
+          width: auto;
+        }
+        
+        a {
+          width: 100%;
+          
+          @media (min-width: $bp-768) {
+            width: auto;
+          }
+        }
+      }
+    }
+  }
 
   .footer-meta {
     padding: 25px 0 30px;
@@ -209,7 +326,7 @@ footer.main-footer {
     align-items: flex-start;
 
     @media (min-width: $bp-768) {
-      border-top: 1px solid $westar;
+      //border-top: 1px solid $westar;
       width: 100%;
       flex-direction: row;
       flex-wrap: nowrap;

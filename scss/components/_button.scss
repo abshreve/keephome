@@ -84,6 +84,17 @@
             background: $taupe;
         }
     }
+    
+    &.btn--light {
+        border-color: #fff;
+        color: #fff;
+        background: transparent;
+    
+        &:hover {
+            color: $allports;
+            background: #fff;
+        }
+    }
 }
 
 /*** legacy ***/

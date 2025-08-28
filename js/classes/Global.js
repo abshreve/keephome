@@ -11,8 +11,8 @@ class Global extends ParentClass {
                 $('.toolbar').addClass('header-has-sub-menu-open');
             },
             function () {
-                $('.header__nav').removeClass('has-sub-menu-open');
-                $('.toolbar').removeClass('header-has-sub-menu-open');
+                //$('.header__nav').removeClass('has-sub-menu-open');
+                //$('.toolbar').removeClass('header-has-sub-menu-open');
             }
         )
 

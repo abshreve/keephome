@@ -26,7 +26,8 @@ class Header {
 
     if(this.search) {
       this.search.querySelector('.searchform .searchform__clear').addEventListener('click', (e) => {
-        self.search.querySelector('.searchform__input').value = ''
+        self.search.querySelector('.searchform__input').value = '';
+        this.search.classList.remove('show');
       })
     }
 

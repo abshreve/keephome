@@ -1,6 +1,6 @@
 {
     "key": "group_67d2b75cceb6f",
-    "title": "Header Menu",
+    "title": "Menu Flyout",
     "fields": [
         {
             "key": "field_67d2b964e9606",
@@ -25,8 +25,8 @@
         },
         {
             "key": "field_67d2b75cc87ee",
-            "label": "Sub Menu Content",
-            "name": "sub_menu_content",
+            "label": "Flyout Content",
+            "name": "flyout_content",
             "aria-label": "",
             "type": "repeater",
             "instructions": "",
@@ -56,7 +56,7 @@
                 {
                     "key": "field_67d2b8dae9603",
                     "label": "Title",
-                    "name": "title",
+                    "name": "flyout_content_title",
                     "aria-label": "",
                     "type": "text",
                     "instructions": "",
@@ -76,9 +76,31 @@
                     "parent_repeater": "field_67d2b75cc87ee"
                 },
                 {
+                    "key": "field_67d41e537c94b",
+                    "label": "Link",
+                    "name": "flyout_content_link",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_67d2b75cc87ee"
+                },
+                {
                     "key": "field_67d2b8e8e9604",
                     "label": "Content",
-                    "name": "content",
+                    "name": "flyout_content_content",
                     "aria-label": "",
                     "type": "wysiwyg",
                     "instructions": "",
@@ -100,7 +122,7 @@
                 {
                     "key": "field_67d2b943e9605",
                     "label": "Image",
-                    "name": "image",
+                    "name": "flyout_content_image",
                     "aria-label": "",
                     "type": "image",
                     "instructions": "",
@@ -133,6 +155,11 @@
                 "param": "nav_menu_item",
                 "operator": "==",
                 "value": "2"
+            },
+            {
+                "param": "menu_level",
+                "operator": "==",
+                "value": "1"
             }
         ]
     ],
@@ -145,5 +172,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1741871605
+    "modified": 1742225225
 }

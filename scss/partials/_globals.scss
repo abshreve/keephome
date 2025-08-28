@@ -3,6 +3,7 @@
 
 body {
     @include font-smoothing();
+    overflow-x: hidden;
 }
 
 h1 {
